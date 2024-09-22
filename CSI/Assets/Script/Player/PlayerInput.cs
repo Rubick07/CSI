@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+
+public enum PlayerState {idle, walk}
+public enum PlayerRole {Detektif, Forensik }
+
 public class PlayerInput : NetworkBehaviour
 {
+    public PlayerState state;
+    public PlayerRole Role;
     [SerializeField] private float speed;
     Vector2 movement;
     Rigidbody2D rb;
@@ -31,6 +37,11 @@ public class PlayerInput : NetworkBehaviour
         if (!IsOwner) return;
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
 
+    }
+
+    public override void OnNetworkSpawn()
+    {
+       
     }
 
 }
