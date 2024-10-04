@@ -4,7 +4,6 @@ using Unity.Netcode;
 using UnityEngine;
 using TMPro;
 
-
 public class CulpritsGenerator : NetworkBehaviour
 {
     [SerializeField] CulpritSO[] _culprits;
