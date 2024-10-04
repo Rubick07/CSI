@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 1413005121
+    locked: 0
+  - name: Clues
+    uniqueID: 450828847
+    locked: 0
