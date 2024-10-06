@@ -82,5 +82,9 @@ public class CulpritsGenerator : NetworkBehaviour
         _Culpritstxt.text = _CulpritIndex[0].ToString();
     }
     */
+    public CulpritSO GetCulprit()
+    {
+        return _culprits[_CulpritIndex[0]];
+    }
 
 }
