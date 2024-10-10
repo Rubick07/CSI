@@ -11,11 +11,16 @@ public class PlayerInput : NetworkBehaviour
 {
     public PlayerState state;
     public PlayerRole Role;
+    [SerializeField] private GameObject PickUpObject;
     [SerializeField] private float speed;
     [SerializeField] private float InteractRange;
     [SerializeField] LayerMask InteractLayer;
+
     Vector2 movement;
     Rigidbody2D rb;
+
+    public static PlayerInput LocalInstance { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,7 @@ public class PlayerInput : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log("Interact");
             Interact();
         }
         
@@ -65,12 +71,25 @@ public class PlayerInput : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        
-        //Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos((int)OwnerClientId);
-        //transform.position = new Vector2(transform.position.x + 2f, transform.position.y);
-        
+        if (IsOwner)
+        {
+            LocalInstance = this;
+            Debug.Log(LocalInstance);
+        }
     }
 
-    
+    #region
 
+    public GameObject GetPickUpObject()
+    {
+        
+        return PickUpObject;
+    }
+
+    public void SetPickUpObject(GameObject item)
+    {
+        PickUpObject = item;
+    }
+
+    #endregion
 }

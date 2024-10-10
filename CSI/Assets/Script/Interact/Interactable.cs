@@ -1,19 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Interactable : MonoBehaviour
+public class Interactable : NetworkBehaviour
 {
     public float interactRange;
     public GameObject Text;
     public LayerMask PlayerLayer;
     public Collider2D player;
+
+
     private void FixedUpdate()
     {
+        if(PlayerInput.LocalInstance == null)
+        {
+            return;
+        }
+
         player = Physics2D.OverlapCircle(transform.position, interactRange, PlayerLayer);
+
+
         if (player != null)
         {
-            Text.SetActive(true);
+            if(player.gameObject == PlayerInput.LocalInstance.gameObject)
+            {
+                Text.SetActive(true);
+
+            }
+            Debug.Log(player.gameObject + " " + PlayerInput.LocalInstance.gameObject);
         }
         else
         {
