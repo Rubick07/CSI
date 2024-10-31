@@ -37,6 +37,7 @@ public class ClueGenerator : NetworkBehaviour
             {
                 Randomnumber = Random.Range(0, CluePosition.Count);
             }
+
             SelectedIndexCluePosition.Add(Randomnumber);
         }
     }

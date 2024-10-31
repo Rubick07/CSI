@@ -395,6 +395,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   player: {fileID: 0}
+  clue:
+    ClueName: oke
+    img: {fileID: 0}
+    description: adfadsf
 --- !u!58 &-6685089149153665684
 CircleCollider2D:
   m_ObjectHideFlags: 0

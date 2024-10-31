@@ -5,7 +5,7 @@ using Unity.Netcode;
 
 public class PickUpInteract : Interactable
 {
-
+    [SerializeField] private Clue clue;
     public override void Interact()
     {
         PickUpServerRpc();
@@ -22,10 +22,24 @@ public class PickUpInteract : Interactable
         gameObject.SetActive(false);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void PickUpServerRpc()
     {
         PickUpClientRpc();
-    } 
-    
+    }
+
+    public Clue GetClue()
+    {
+        return clue;
+    }
+}
+
+[System.Serializable]
+public class Clue
+{
+    public string ClueName;
+    public Sprite img;
+    public string description;
+
+
 }

@@ -13,9 +13,10 @@ public class CarInteract : Interactable
     }
     public override void Interact()
     {
-        if (PlayerInput.LocalInstance.GetPickUpObject() == null) return;
-        //Debug.Log(PlayerInput.LocalInstance.GetPickUpObject());
+        if (!player.GetComponent<PlayerInput>().GetPickUpObject()) return;
+        Debug.Log("CarInteract");
         Carsystem.DeliverClue(player.GetComponent<PlayerInput>().GetPickUpObject());
+        player.GetComponent<PlayerInput>().DeletePickUpObject();
     }
 
 }

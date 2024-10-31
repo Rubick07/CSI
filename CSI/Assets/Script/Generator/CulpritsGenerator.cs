@@ -67,7 +67,7 @@ public class CulpritsGenerator : NetworkBehaviour
                 generateNumber = Random.Range(0, _culprits.Length);
             }
             _CulpritIndex.Add(generateNumber);
-
+            Journal._instance.AddCulprits(_culprits[generateNumber]);
         }
         randomCulprit.Value = new CulpritData { _int = _CulpritIndex.ToArray() };
         _Culpritstxt.text = _CulpritIndex[0].ToString();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using Cinemachine;
 using System;
 
 public enum PlayerState {idle, walk}
@@ -15,15 +16,17 @@ public class PlayerInput : NetworkBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float InteractRange;
     [SerializeField] LayerMask InteractLayer;
-
+    [SerializeField] Camera Playercamera;
     Vector2 movement;
     Rigidbody2D rb;
+    private bool OpenJournal = false;
 
     public static PlayerInput LocalInstance { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         
         Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos((int)OwnerClientId);
@@ -34,18 +37,31 @@ public class PlayerInput : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsOwner) return;
-        
+        if (!IsOwner)
+        {
+            Playercamera.gameObject.SetActive(false);
+            return;
+        }
+
+        PlayerInputSystem();
+
+    }
+
+    private void PlayerInputSystem()
+    {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Interact");
             Interact();
         }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("oajf");
+            OpenCloseJournal();
+        }
     }
 
     private void FixedUpdate()
@@ -69,6 +85,14 @@ public class PlayerInput : NetworkBehaviour
 
     }
 
+    private void OpenCloseJournal()
+    {
+        OpenJournal = !OpenJournal;
+
+        if (OpenJournal) Journal._instance.PlayAnimation("Drop");
+        else Journal._instance.PlayAnimation("Up");
+    }
+
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
@@ -78,7 +102,7 @@ public class PlayerInput : NetworkBehaviour
         }
     }
 
-    #region
+    #region 
 
     public GameObject GetPickUpObject()
     {
@@ -90,6 +114,12 @@ public class PlayerInput : NetworkBehaviour
     {
         PickUpObject = item;
     }
+
+    public void DeletePickUpObject()
+    {
+        PickUpObject = null;
+    }
+
 
     #endregion
 }

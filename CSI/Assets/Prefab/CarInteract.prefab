@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4620161751125360266}
   - component: {fileID: 7650569794890256400}
   m_Layer: 7
-  m_Name: Capsule
+  m_Name: CarInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
