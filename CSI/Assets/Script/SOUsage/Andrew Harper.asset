@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Andrew Harper
   m_EditorClassIdentifier: 
   CulpritName: Andrew Harper
+  CulpritPhoto: {fileID: 21300000, guid: a5270012f57342c45b86bb3f3fa26d1b, type: 3}
   Bukti:
   - {fileID: 6620268474417094345, guid: e5024a9d93d5c3d48843366170f699c4, type: 3}
   - {fileID: 8115423699486162853, guid: 433d4ccd3b52edd43b4b7dd80688a345, type: 3}

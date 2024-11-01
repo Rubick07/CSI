@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Notice
   - Journal
+  - PopUpDone
   layers:
   - Default
   - TransparentFX

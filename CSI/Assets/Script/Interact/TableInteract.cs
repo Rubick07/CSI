@@ -13,6 +13,7 @@ public enum ClueProcessState
 public class TableInteract : Interactable
 {
     [SerializeField] private float _TimeToScan;
+    float _timeTemp;
     [SerializeField] Animator animatorPopUpProcess;
     [SerializeField] Animator animatorPopUpDone;
     public ClueProcessState state;
@@ -21,6 +22,7 @@ public class TableInteract : Interactable
 
     private void Start()
     {
+        _timeTemp = _TimeToScan;
         animatorPopUpProcess = GameObject.FindGameObjectWithTag("Notice").GetComponent<Animator>();
         animatorPopUpDone = GetComponentInChildren<Animator>();
     }
@@ -42,11 +44,12 @@ public class TableInteract : Interactable
 
     private void ClueProcessDone()
     {
+        animatorPopUpDone.SetTrigger("Process");
         ClueDonePickUp ClueProcessDone = Instantiate(_BuktiObject, transform);
         ClueProcessDone.SetUpClue(_Bukti.GetComponent<PickUpInteract>().GetClue());
         ClueProcessDone.GetComponent<NetworkObject>().Spawn(true);
         state = ClueProcessState.done;
-        animatorPopUpDone.SetTrigger("Process");
+        
         _Bukti = null;
     }
 
@@ -61,7 +64,7 @@ public class TableInteract : Interactable
     {
         _Bukti = player.GetComponent<PlayerInput>().GetPickUpObject();
         if (_Bukti == null) return;
-
+        _TimeToScan = _timeTemp;
         state = ClueProcessState.process;
         //Debug.Log(animatorPopUpProcess.GetCurrentAnimatorStateInfo(0).IsName("Flickering"));
         animatorPopUpProcess.SetTrigger("Process");

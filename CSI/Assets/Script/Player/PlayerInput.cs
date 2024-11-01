@@ -59,7 +59,7 @@ public class PlayerInput : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("oajf");
+            Journal._instance.UpdatePage();
             OpenCloseJournal();
         }
     }

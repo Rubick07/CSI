@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
 public enum JournalState
 {
@@ -11,17 +12,30 @@ public enum JournalState
 }
 
 public class Journal : MonoBehaviour
-{
+{   
     [SerializeField] private JournalState state;
-    [SerializeField] private GameObject Profile;
-    [SerializeField] private GameObject Evidence;
-    [SerializeField] private Image image;
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private Animator JournalAnimation;
 
+    [Header("Profile SetUp")]    
+    [SerializeField] private GameObject Profile;
+    [SerializeField] private Image Profileimage;
+    [SerializeField] private TMP_Text ProfileNametext;
+    [SerializeField] private TMP_Text Alibitext;
+    [Header("Evidence SetUp")]
+    [SerializeField] private GameObject Evidence;
+    [SerializeField] private Image Evidenceimage;
+    [SerializeField] private TMP_Text Evidencetext;
+    
+    [SerializeField] private Animator JournalAnimation;
     [SerializeField] private List<CulpritSO> culprits;
     [SerializeField] private List<Clue> cluesUnlocked;
     int index = 0;
+
+    [Header("CluePopUps SetUp")]
+    [SerializeField] private TMP_Text ClueText;
+    [SerializeField] private Image CluePhoto;
+
+    //private NetworkVariable<JournalData>
+
     public static Journal _instance;
 
     private void Awake()
@@ -43,16 +57,32 @@ public class Journal : MonoBehaviour
 
     public void UpdatePage()
     {
-        if (cluesUnlocked.Count == 0) return;
+        if(state == JournalState.Profile)
+        {
+            Profileimage.sprite = culprits[index].CulpritPhoto;
+            ProfileNametext.text = culprits[index].CulpritName;
+            //Alibitext.text = cluesUnlocked[index].description;
+        }
+        else if(state == JournalState.Evidence)
+        {
+            Evidenceimage.sprite = cluesUnlocked[index].img;
+            Evidencetext.text = cluesUnlocked[index].description;
 
-        image.sprite = cluesUnlocked[index].img;
-        text.text = cluesUnlocked[index].description;
+        }
 
+    }
+
+    public void RefreshPage()
+    {
+        Profileimage.sprite = culprits[0].CulpritPhoto;
+        ProfileNametext.text = culprits[0].CulpritName;
+
+        Evidenceimage.sprite = cluesUnlocked[0].img;
+        Evidencetext.text = cluesUnlocked[0].description;
     }
 
     public void NextPage()
     {
-        if (cluesUnlocked.Count == 0) return;
 
         if (index + 1 == cluesUnlocked.Count)
         {
@@ -68,11 +98,10 @@ public class Journal : MonoBehaviour
 
     public void PrevPage()
     {
-        if (cluesUnlocked.Count == 0) return;
 
         if (index == 0)
         {
-            index = cluesUnlocked.Count;
+            index = cluesUnlocked.Count -1;
         }
         else
         {
@@ -81,18 +110,26 @@ public class Journal : MonoBehaviour
         UpdatePage();
     }
 
+
     public void ChangeToProfile()
     {
         if (state == JournalState.Profile) return;
-
-
+        index = 0;
+        Profile.SetActive(true);
+        Evidence.SetActive(false);
+        state = JournalState.Profile;
+        UpdatePage();
     }
 
     public void ChangeToEvidence()
     {
+        if (cluesUnlocked.Count == 0) return;
         if (state == JournalState.Evidence) return;
-
-
+        index = 0;
+        Profile.SetActive(false);
+        Evidence.SetActive(true);
+        state = JournalState.Evidence;
+        UpdatePage();
     }
 
 
@@ -104,6 +141,13 @@ public class Journal : MonoBehaviour
     public void AddCulprits(CulpritSO culpritSO)
     {
         culprits.Add(culpritSO);
+    }
+
+    public void CluePopUps(Clue clue)
+    {
+        CluePhoto.sprite = clue.img;
+        ClueText.text = clue.description;
+
     }
 
 }

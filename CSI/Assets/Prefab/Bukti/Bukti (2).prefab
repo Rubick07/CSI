@@ -395,6 +395,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   player: {fileID: 0}
+  clue:
+    ClueName: 
+    img: {fileID: 21300000, guid: a9f53f333ab8ad24e9f46ed26d5c08c9, type: 3}
+    description: 'Ditemukan foto di dalam laci '
 --- !u!58 &-5514894341453420757
 CircleCollider2D:
   m_ObjectHideFlags: 0

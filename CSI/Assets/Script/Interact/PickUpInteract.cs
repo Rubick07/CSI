@@ -39,6 +39,7 @@ public class Clue
 {
     public string ClueName;
     public Sprite img;
+    [TextArea]
     public string description;
 
 

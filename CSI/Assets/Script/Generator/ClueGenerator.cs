@@ -58,6 +58,7 @@ public class ClueGenerator : NetworkBehaviour
             var clue = Instantiate(SelectedCulprit.Bukti[i], CluePosition[SelectedIndexCluePosition[i]]);
             clue.GetComponent<NetworkObject>().Spawn(true);
         }
+        TimeManager.instance.StartGame();
     }
 
 }

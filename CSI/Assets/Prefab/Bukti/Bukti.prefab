@@ -397,8 +397,8 @@ MonoBehaviour:
   player: {fileID: 0}
   clue:
     ClueName: oke
-    img: {fileID: 0}
-    description: adfadsf
+    img: {fileID: 21300000, guid: 98c4fee4260a9ec44bd3a42764c6fe2e, type: 3}
+    description: Ditemukan mayat dijalanan
 --- !u!58 &-6685089149153665684
 CircleCollider2D:
   m_ObjectHideFlags: 0
