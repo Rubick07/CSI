@@ -19,6 +19,7 @@ public class TableInteract : Interactable
     public ClueProcessState state;
     [SerializeField] ClueDonePickUp _BuktiObject;
     private GameObject _Bukti;
+    private ClueDonePickUp ClueProcessReadyPickUp;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class TableInteract : Interactable
         if (state != ClueProcessState.process) return;
 
         if(_TimeToScan > 0) _TimeToScan -= Time.deltaTime;
-        else
+        else if(state == ClueProcessState.process)
         {
             ClueProcessDone();
         }
@@ -45,13 +46,14 @@ public class TableInteract : Interactable
     private void ClueProcessDone()
     {
         animatorPopUpDone.SetTrigger("Process");
-        ClueDonePickUp ClueProcessDone = Instantiate(_BuktiObject, transform);
-        ClueProcessDone.SetUpClue(_Bukti.GetComponent<PickUpInteract>().GetClue());
-        ClueProcessDone.GetComponent<NetworkObject>().Spawn(true);
+        ClueProcessReadyPickUp = Instantiate(_BuktiObject, transform);
+        ClueProcessReadyPickUp.SetUpClue(_Bukti.GetComponent<PickUpInteract>().GetClue());
+        ClueProcessReadyPickUp.GetComponent<NetworkObject>().Spawn(true);
         state = ClueProcessState.done;
         
         _Bukti = null;
     }
+    
 
     public override void Interact()
     {

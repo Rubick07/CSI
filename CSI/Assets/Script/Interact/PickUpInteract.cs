@@ -38,7 +38,7 @@ public class PickUpInteract : Interactable
 public class Clue
 {
     public string ClueName;
-    public Sprite img;
+    public int imgIndex;
     [TextArea]
     public string description;
 

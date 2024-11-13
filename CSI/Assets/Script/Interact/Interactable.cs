@@ -28,7 +28,7 @@ public class Interactable : NetworkBehaviour
                 Text.SetActive(true);
 
             }
-            Debug.Log(player.gameObject + " " + PlayerInput.LocalInstance.gameObject);
+            
         }
         else
         {

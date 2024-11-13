@@ -11,7 +11,16 @@ public enum JournalState
     Evidence
 }
 
-public class Journal : MonoBehaviour
+[System.Serializable]
+public class Page
+{
+    public string ClueName;
+    public Sprite img;
+    [TextArea]
+    public string description;
+}
+
+public class Journal : NetworkBehaviour
 {   
     [SerializeField] private JournalState state;
 
@@ -27,7 +36,7 @@ public class Journal : MonoBehaviour
     
     [SerializeField] private Animator JournalAnimation;
     [SerializeField] private List<CulpritSO> culprits;
-    [SerializeField] private List<Clue> cluesUnlocked;
+    [SerializeField] private List<Page> cluesUnlocked;
     int index = 0;
 
     [Header("CluePopUps SetUp")]
@@ -35,7 +44,20 @@ public class Journal : MonoBehaviour
     [SerializeField] private Image CluePhoto;
 
     //private NetworkVariable<JournalData>
+    /*
+    public struct JournalData : INetworkSerializable
+    {
+        public List<CulpritSO> culprits;
+        public List<Clue> cluesUnlocked;
 
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref culprits);
+            serializer.SerializeValue(ref cluesUnlocked);
+        }
+
+    }
+    */
     public static Journal _instance;
 
     private void Awake()
@@ -50,7 +72,7 @@ public class Journal : MonoBehaviour
         }
     }
 
-    public void AddUnlockedClues(Clue clue)
+    public void AddUnlockedClues(Page clue)
     {
         cluesUnlocked.Add(clue);
     }
@@ -65,7 +87,7 @@ public class Journal : MonoBehaviour
         }
         else if(state == JournalState.Evidence)
         {
-            Evidenceimage.sprite = cluesUnlocked[index].img;
+            //Evidenceimage.sprite = cluesUnlocked[index].img;
             Evidencetext.text = cluesUnlocked[index].description;
 
         }
@@ -143,7 +165,7 @@ public class Journal : MonoBehaviour
         culprits.Add(culpritSO);
     }
 
-    public void CluePopUps(Clue clue)
+    public void CluePopUps(Page clue)
     {
         CluePhoto.sprite = clue.img;
         ClueText.text = clue.description;

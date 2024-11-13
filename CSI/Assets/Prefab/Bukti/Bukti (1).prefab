@@ -295,7 +295,7 @@ MonoBehaviour:
   player: {fileID: 0}
   clue:
     ClueName: 
-    img: {fileID: 21300000, guid: f874b91337b892c4aad7ce393af034c4, type: 3}
+    imgIndex: 4
     description: Saksi menonton dari atas
 --- !u!58 &1216479987919029965
 CircleCollider2D:

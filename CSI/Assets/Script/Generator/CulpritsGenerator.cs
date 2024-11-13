@@ -47,6 +47,10 @@ public class CulpritsGenerator : NetworkBehaviour
             };
 
             _CulpritIndex.AddRange(randomCulprit.Value._int);
+            foreach(int i in randomCulprit.Value._int)
+            {
+                Journal._instance.AddCulprits(_culprits[i]);
+            }
             _Culpritstxt.text = _CulpritIndex[0].ToString();
             return;
         }
@@ -67,6 +71,7 @@ public class CulpritsGenerator : NetworkBehaviour
                 generateNumber = Random.Range(0, _culprits.Length);
             }
             _CulpritIndex.Add(generateNumber);
+
             Journal._instance.AddCulprits(_culprits[generateNumber]);
         }
         randomCulprit.Value = new CulpritData { _int = _CulpritIndex.ToArray() };

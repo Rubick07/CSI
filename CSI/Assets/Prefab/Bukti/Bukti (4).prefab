@@ -294,8 +294,8 @@ MonoBehaviour:
     m_Bits: 64
   player: {fileID: 0}
   clue:
-    ClueName: 
-    img: {fileID: 21300000, guid: db6f31f653148804bbde541a9721464c, type: 3}
+    ClueName: Vincent
+    imgIndex: 2
     description: 'Saksi kedua melihat '
 --- !u!58 &-4108771537053287820
 CircleCollider2D:
