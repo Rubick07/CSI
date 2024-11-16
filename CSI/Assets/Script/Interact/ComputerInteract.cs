@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerInteract : MonoBehaviour
+public class ComputerInteract : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CanvasGroup ComputerUI;
+
+    private PlayerInput LastPlayerInput;
+    public override void Interact()
     {
-        
+        LastPlayerInput = player.GetComponent<PlayerInput>();
+        LastPlayerInput.ChangePlayerState(PlayerState.OpenComputer);
+        ComputerUI.alpha = 1;
+        ComputerUI.interactable = true;
+        ComputerUI.blocksRaycasts = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LeaveComputer()
     {
-        
+        LastPlayerInput.ChangePlayerState(PlayerState.idle);
     }
+
 }

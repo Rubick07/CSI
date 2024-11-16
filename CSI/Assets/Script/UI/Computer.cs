@@ -2,14 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Netcode;
 
-public class Computer : MonoBehaviour
+public class Computer : NetworkBehaviour
 {
     [SerializeField] GameObject PasswordUI;
     [SerializeField] GameObject UnlockedUI;
-    [SerializeField] string Jawaban;
+    [SerializeField] string JawabanTerpilih;
+    [SerializeField] string[] KumpulanJawaban;
     [SerializeField] TMP_Text OutputText;
     private string input;
+    private int IndexTerpilih;
+    private NetworkVariable<ComputerData> RandomPassword = new NetworkVariable<ComputerData>(new ComputerData
+    {
+        indexTerpilih = 0
+    }
+    , NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+
+    public struct ComputerData: INetworkSerializable
+    {
+        public int indexTerpilih;
+
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref indexTerpilih);
+        }
+
+
+    }
+
 
     public void ReadStringInput(string s)
     {
@@ -20,25 +42,45 @@ public class Computer : MonoBehaviour
 
     public void CheckJawaban()
     {
-        if (input.ToUpper() == Jawaban.ToUpper())
+        if (input.ToUpper() == JawabanTerpilih.ToUpper())
         {
             Debug.Log(input.ToUpper());
-            Debug.Log("Kamu Benar");
+            PasswordUI.SetActive(false);
+            UnlockedUI.SetActive(true);
             OutputText.text = "CORRECT";
             
         }
         else
         {
             OutputText.text = "INCORRECT";
-            Debug.Log("Anjay salah");
-
         }
     }
 
     public void SetPassword(string password)
     {
-        Jawaban = password;
+        JawabanTerpilih = password;
     }
 
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer)
+        {
+            RandomPassword.OnValueChanged += (ComputerData previousValue, ComputerData newValue) =>
+            {
+                RandomPassword.Value = newValue;
+            };
+            IndexTerpilih = RandomPassword.Value.indexTerpilih;
+            JawabanTerpilih = KumpulanJawaban[IndexTerpilih];
+            return;
+        }
 
+        GeneratePassword();
+    }
+
+    private void GeneratePassword()
+    {
+        IndexTerpilih = Random.Range(0, KumpulanJawaban.Length);
+        RandomPassword.Value = new ComputerData { indexTerpilih = IndexTerpilih };
+        JawabanTerpilih = KumpulanJawaban[IndexTerpilih];
+    }
 }

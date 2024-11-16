@@ -9,6 +9,8 @@ public class TimeManager : NetworkBehaviour
     bool GameIsstart;
     public static TimeManager instance;
 
+    private Dictionary<ulong, bool> playerReadyDictionary;
+
     private void Awake()
     {
         if(instance == null)
@@ -19,6 +21,9 @@ public class TimeManager : NetworkBehaviour
         {
             Destroy(gameObject);
         }
+
+        playerReadyDictionary = new Dictionary<ulong, bool>();
+
     }
 
     private void Update()

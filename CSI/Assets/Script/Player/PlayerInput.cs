@@ -5,7 +5,7 @@ using Unity.Netcode;
 using Cinemachine;
 using System;
 
-public enum PlayerState {idle, walk}
+public enum PlayerState {idle, walk, OpenComputer}
 public enum PlayerRole {Detektif, Forensik }
 
 public class PlayerInput : NetworkBehaviour
@@ -67,6 +67,7 @@ public class PlayerInput : NetworkBehaviour
     private void FixedUpdate()
     {
         if (!IsOwner) return;
+        if (state == PlayerState.OpenComputer) return;
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
 
 
@@ -93,6 +94,11 @@ public class PlayerInput : NetworkBehaviour
         else Journal._instance.PlayAnimation("Up");
     }
 
+    public void ChangePlayerState(PlayerState NewplayerState)
+    {
+        state = NewplayerState;
+    }
+
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
@@ -102,7 +108,9 @@ public class PlayerInput : NetworkBehaviour
         }
     }
 
-    #region 
+
+
+    #region PickUpObject
 
     public GameObject GetPickUpObject()
     {
@@ -119,6 +127,7 @@ public class PlayerInput : NetworkBehaviour
     {
         PickUpObject = null;
     }
+
 
 
     #endregion
