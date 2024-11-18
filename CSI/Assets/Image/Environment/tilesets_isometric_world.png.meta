@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 36
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,19 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,7 +100,7 @@ TextureImporter:
       name: tilesets_isometric_world_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 72
         width: 251
         height: 181
@@ -124,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44b7ca7b5b05c8c4aafbaa4d17d877f7
-      internalID: -1787576502
+      spriteID: 087699d624393f542b7b897644de7047
+      internalID: 935764748
       vertices: []
       indices: 
       edges: []
@@ -134,7 +121,7 @@ TextureImporter:
       name: tilesets_isometric_world_1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 360
         y: 252
         width: 72
         height: 64
@@ -145,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f98d120dfd540d4a8d061cda8305761
-      internalID: 1589343815
+      spriteID: 90110956e82ef7c4b93517771a73a61a
+      internalID: 90644341
       vertices: []
       indices: 
       edges: []
@@ -155,7 +142,7 @@ TextureImporter:
       name: tilesets_isometric_world_2
       rect:
         serializedVersion: 2
-        x: 285
+        x: 501
         y: 179
         width: 78
         height: 128
@@ -166,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de8e943dd6ffe1844ac20c303afeaf65
-      internalID: -764295981
+      spriteID: b5765047db2214d4caf4cf81255ceb5a
+      internalID: 532617164
       vertices: []
       indices: 
       edges: []
@@ -176,7 +163,7 @@ TextureImporter:
       name: tilesets_isometric_world_3
       rect:
         serializedVersion: 2
-        x: 404
+        x: 620
         y: 182
         width: 165
         height: 139
@@ -187,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b466c58e72214340923d2e6dd9bb89b
-      internalID: 695243341
+      spriteID: d8c59c55fab6e1347a87506827b4ff9d
+      internalID: 1700724775
       vertices: []
       indices: 
       edges: []
@@ -197,7 +184,7 @@ TextureImporter:
       name: tilesets_isometric_world_4
       rect:
         serializedVersion: 2
-        x: 593
+        x: 809
         y: 216
         width: 79
         height: 74
@@ -208,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6393f878145d164c8800f21592112b5
-      internalID: 1202041831
+      spriteID: e10e75e13538c7045af88f00100f4b2f
+      internalID: 1850717797
       vertices: []
       indices: 
       edges: []
@@ -218,49 +205,7 @@ TextureImporter:
       name: tilesets_isometric_world_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 144
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6ea304dfa0ad884b8a143a5b448f7d7
-      internalID: -1004342841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilesets_isometric_world_6
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88092d80716a346449356dc01746de34
-      internalID: 1670678090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilesets_isometric_world_7
-      rect:
-        serializedVersion: 2
-        x: 285
+        x: 501
         y: 35
         width: 78
         height: 128
@@ -271,17 +216,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf50fdc0e4580640a7a543faebc0410
-      internalID: -621397445
+      spriteID: 2583fa0eb0eb66c4aab816cec88db1d2
+      internalID: -1703763753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilesets_isometric_world_8
+      name: tilesets_isometric_world_6
       rect:
         serializedVersion: 2
-        x: 404
+        x: 620
         y: 37
         width: 165
         height: 139
@@ -292,8 +237,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8a720100bc5b6d4ea37094f5e0f48fc
-      internalID: -1651170112
+      spriteID: 1e848b5d934857848854e9e06e995e60
+      internalID: -1407088838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_7
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 36
+        width: 72
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068ce74958ec83b4ead579f4551d07d4
+      internalID: 2058700566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_8
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 37
+        width: 72
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecaf8ab50cfb7784da60076367432103
+      internalID: 1732916609
       vertices: []
       indices: 
       edges: []
@@ -302,10 +289,10 @@ TextureImporter:
       name: tilesets_isometric_world_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 36
-        width: 216
-        height: 151
+        x: 1116
+        y: 144
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d5513636987fcd4b9e98c7274592e65
-      internalID: 540479555
+      spriteID: da068f1e257158545a226a8a080b0f0d
+      internalID: -766324814
       vertices: []
       indices: 
       edges: []
@@ -323,10 +310,10 @@ TextureImporter:
       name: tilesets_isometric_world_10
       rect:
         serializedVersion: 2
-        x: 159
-        y: 15
-        width: 6
-        height: 5
+        x: 288
+        y: 72
+        width: 36
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,8 +321,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1609a22836eabff48adf92ec7f0205b0
-      internalID: -1231335823
+      spriteID: 4ebc2c09d907bb641ba6735c411684fb
+      internalID: -1563196064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 72
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5146c5c4303f540a417d504cc1e52d
+      internalID: -1520983062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 72
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff1d51436724274c9054a6f18fa0c80
+      internalID: 717019135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_13
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 36
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df081d50dc7a09f45a9cfbd2dea20850
+      internalID: 879651520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bcc5cbd7d439274d8a7280cb5791138
+      internalID: 1336793087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_15
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22dc69a814f08af4f9e3e2efb7e60c3f
+      internalID: 883030875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34ec5a0898cf204ca9bbeafc653216c
+      internalID: -1176021177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_17
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119e25eceaa47644b897376c075abae5
+      internalID: -1809183780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_isometric_world_18
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2bdc6772a1623448be1da1e93c8627
+      internalID: -154909097
       vertices: []
       indices: 
       edges: []
@@ -351,17 +506,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tilesets_isometric_world_0: -1787576502
-      tilesets_isometric_world_1: 1589343815
-      tilesets_isometric_world_10: -1231335823
-      tilesets_isometric_world_2: -764295981
-      tilesets_isometric_world_3: 695243341
-      tilesets_isometric_world_4: 1202041831
-      tilesets_isometric_world_5: -1004342841
-      tilesets_isometric_world_6: 1670678090
-      tilesets_isometric_world_7: -621397445
-      tilesets_isometric_world_8: -1651170112
-      tilesets_isometric_world_9: 540479555
+      tilesets_isometric_world_0: 935764748
+      tilesets_isometric_world_1: 90644341
+      tilesets_isometric_world_10: -1563196064
+      tilesets_isometric_world_11: -1520983062
+      tilesets_isometric_world_12: 717019135
+      tilesets_isometric_world_13: 879651520
+      tilesets_isometric_world_14: 1336793087
+      tilesets_isometric_world_15: 883030875
+      tilesets_isometric_world_16: -1176021177
+      tilesets_isometric_world_17: -1809183780
+      tilesets_isometric_world_18: -154909097
+      tilesets_isometric_world_2: 532617164
+      tilesets_isometric_world_3: 1700724775
+      tilesets_isometric_world_4: 1850717797
+      tilesets_isometric_world_5: -1703763753
+      tilesets_isometric_world_6: -1407088838
+      tilesets_isometric_world_7: 2058700566
+      tilesets_isometric_world_8: 1732916609
+      tilesets_isometric_world_9: -766324814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
