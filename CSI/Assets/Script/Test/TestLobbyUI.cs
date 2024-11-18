@@ -12,12 +12,12 @@ public class TestLobbyUI : NetworkBehaviour
     private void Awake()
     {
         CreateButton.onClick.AddListener(() =>{
-            NetworkManager.Singleton.StartHost();     
-        
+            CSIGameMultiplayer.Instance.StartHost();
+            Loader.LoadNetwork(Loader.Scene.CharacterSelectScene);
             }
         );
         JoinButton.onClick.AddListener(() => {
-            NetworkManager.Singleton.StartClient();
+            CSIGameMultiplayer.Instance.StartClient();
 
         }
 );
