@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:CSI/Assets/TileSet/Tileset Baru City/City Palette.prefab.meta
 guid: 8e1fdd6afc4345e419bf4a044621f9c4
+========
+guid: 0f575d73384281043afba15795d3e59a
+>>>>>>>> Ini-punya-saya:CSI/Assets/TileSet/Belajar.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
