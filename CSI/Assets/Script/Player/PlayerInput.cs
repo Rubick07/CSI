@@ -52,6 +52,11 @@ public class PlayerInput : NetworkBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             Interact();
@@ -62,6 +67,11 @@ public class PlayerInput : NetworkBehaviour
             Journal._instance.UpdatePage();
             OpenCloseJournal();
         }
+    }
+
+    private void PauseGame()
+    {
+        GameManager.Instance.TogglePauseGame();
     }
 
     private void FixedUpdate()
