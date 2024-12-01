@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayMusic("MainMenu");
+        //AudioManager.Instance.PlayMusic("MainMenu");
     }
 
     public void ChangeScene(string scenename)

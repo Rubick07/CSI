@@ -151,4 +151,77 @@ public class CSIGameMultiplayer : NetworkBehaviour
         return -1;
     }
 
+    public PlayerData GetPlayerDataFromClientId(ulong clientId)
+    {
+        foreach (PlayerData playerData in playerDataNetworkList)
+        {
+            if (playerData.clientId == clientId)
+            {
+                return playerData;
+            }
+        }
+        return default;
+    }
+
+    public PlayerData GetPlayerData()
+    {
+        return GetPlayerDataFromClientId(NetworkManager.Singleton.LocalClientId);
+    }
+
+    public PlayerData GetPlayerDataFromPlayerIndex(int playerIndex)
+    {
+        return playerDataNetworkList[playerIndex];
+    }
+
+
+    private bool IsRoleAvailable(PlayerRole playerRoleOke)
+    {
+        foreach (PlayerData playerData in playerDataNetworkList)
+        {
+            if (playerData.playerRole == playerRoleOke)
+            {
+                // Already in use
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool IsRoleNoNeutral()
+    {
+        foreach (PlayerData playerData in playerDataNetworkList)
+        {
+            if (playerData.playerRole == PlayerRole.Neutral)
+            {
+                // Player Not Select Role
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void ChangePlayerRole(PlayerRole playerRole)
+    {
+        ChangePlayerRoleServerRpc(playerRole);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangePlayerRoleServerRpc(PlayerRole playerRole, ServerRpcParams serverRpcParams = default)
+    {
+        if (!IsRoleAvailable(playerRole))
+        {
+            // Role not available
+            return;
+        }
+
+        int playerDataIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
+
+        PlayerData playerData = playerDataNetworkList[playerDataIndex];
+
+        playerData.playerRole = playerRole;
+
+        playerDataNetworkList[playerDataIndex] = playerData;
+    }
+
+
 }

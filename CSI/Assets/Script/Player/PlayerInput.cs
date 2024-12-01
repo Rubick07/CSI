@@ -6,20 +6,24 @@ using Cinemachine;
 using System;
 
 public enum PlayerState {idle, walk, OpenComputer}
-public enum PlayerRole {Detektif, Forensik }
+public enum PlayerRole {Detektif, Forensik, Neutral}
 
 public class PlayerInput : NetworkBehaviour
 {
+    [Header("PlayerState")]
     public PlayerState state;
-    public PlayerRole Role;
+    NetworkVariable <PlayerRole> Role = new NetworkVariable<PlayerRole>(PlayerRole.Neutral);
+    [Header("PickUp SetUp")]
     [SerializeField] private GameObject PickUpObject;
     [SerializeField] private float speed;
     [SerializeField] private float InteractRange;
     [SerializeField] LayerMask InteractLayer;
+    [Header("Camera SetUp")]
     [SerializeField] Camera Playercamera;
     Vector2 movement;
     Rigidbody2D rb;
     private bool OpenJournal = false;
+
 
     public static PlayerInput LocalInstance { get; private set; }
 
@@ -42,7 +46,7 @@ public class PlayerInput : NetworkBehaviour
             Playercamera.gameObject.SetActive(false);
             return;
         }
-
+        
         PlayerInputSystem();
 
     }
@@ -59,6 +63,7 @@ public class PlayerInput : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            SetLocalPlayerReady();
             Interact();
         }
 
@@ -96,6 +101,11 @@ public class PlayerInput : NetworkBehaviour
 
     }
 
+    private void SetLocalPlayerReady()
+    {
+        GameManager.Instance.GameInputSetLocalPlayerReady();
+    }
+
     private void OpenCloseJournal()
     {
         OpenJournal = !OpenJournal;
@@ -107,6 +117,11 @@ public class PlayerInput : NetworkBehaviour
     public void ChangePlayerState(PlayerState NewplayerState)
     {
         state = NewplayerState;
+    }
+
+    public void ChangePlayerRole(PlayerRole NewplayerRole)
+    {
+        Role.Value = NewplayerRole;
     }
 
     public override void OnNetworkSpawn()

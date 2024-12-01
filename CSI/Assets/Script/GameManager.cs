@@ -52,7 +52,7 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
-
+        Debug.Log(IsGamePlaying());
         switch (state.Value)
         {
             case State.WaitingToStart:
@@ -119,20 +119,60 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    private void State_OnValueChanged(State previousValue, State newValue)
-    {
-        OnStateChanged?.Invoke(this, EventArgs.Empty);
-    }
-
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             Transform playerTransform = Instantiate(playerPrefab);
+            PlayerData playerData = CSIGameMultiplayer.Instance.GetPlayerDataFromClientId(clientId);
             playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+            playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
         }
     }
 
+    #region PlayerReadyFunction
+
+    private void State_OnValueChanged(State previousValue, State newValue)
+    {
+        OnStateChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void GameInputSetLocalPlayerReady()
+    {
+        if (state.Value == State.WaitingToStart)
+        {
+            isLocalPlayerReady = true;
+            OnLocalPlayerReadyChanged?.Invoke(this, EventArgs.Empty);
+
+            SetPlayerReadyServerRpc();
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        playerReadyDictionary[serverRpcParams.Receive.SenderClientId] = true;
+
+        bool allClientsReady = true;
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        {
+            if (!playerReadyDictionary.ContainsKey(clientId) || !playerReadyDictionary[clientId])
+            {
+                // This player is NOT ready
+                allClientsReady = false;
+                break;
+            }
+        }
+
+        if (allClientsReady)
+        {
+            state.Value = State.CountdownToStart;
+        }
+    }
+
+    #endregion
+
+    #region ReturnBool
     public bool IsGamePlaying()
     {
         return state.Value == State.GamePlaying;
@@ -167,6 +207,8 @@ public class GameManager : NetworkBehaviour
     {
         return 1 - (gamePlayingTimer.Value / gamePlayingTimerMax);
     }
+
+    #endregion
 
     #region PauseFunction
     public void TogglePauseGame()

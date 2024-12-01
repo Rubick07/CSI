@@ -92,4 +92,9 @@ public class CulpritsGenerator : NetworkBehaviour
         return _culprits[_CulpritIndex[0]];
     }
 
+    public List<int> getAllCulpritsIndex()
+    {
+        return _CulpritIndex;
+    }
+
 }

@@ -34,6 +34,11 @@ public class CharacterSelectReady : NetworkBehaviour
                 break;
             }
         }
+        if (!CSIGameMultiplayer.Instance.IsRoleNoNeutral())
+        {
+            allClientsReady = false;
+            
+        }
 
         if (allClientsReady)
         {

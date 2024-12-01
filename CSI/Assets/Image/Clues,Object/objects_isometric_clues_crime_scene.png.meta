@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: 1ab45bca822397f4b990d6aee97f539f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 191
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4a7a59a268ed848ad6c24b9a9eb7ea
+      internalID: -1715087226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 191
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f011bc50b1dba49b995501b43de976
+      internalID: -53867571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 190
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c035f212b52d04dafe78fac3cc17ed
+      internalID: 1187361549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 190
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd4385d3588f514caed617a71d6b71f
+      internalID: 320112283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 189
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017891046cfa4414fb8757d3e690f8d4
+      internalID: -2032550205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_5
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 189
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff84595c6d8353a40b3c7b7c126cde4b
+      internalID: 994943164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 189
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19571a6520731ec4d94c12fecc2e21a1
+      internalID: 1219673402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 189
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c95a977d50493445953344f23b914ad
+      internalID: -654957244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_8
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 188
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41a8c225ff2cc94f9613c9596b0fc11
+      internalID: -771676960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 193
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac8f18511cd2c94b9c463c25fe5f2a8
+      internalID: -1570107429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_10
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 190
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147fc0b4171eaa44ebb931c6e0fe7962
+      internalID: -889862012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_11
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 192
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1200b2a6d3ec9014fb5094fe53e328fe
+      internalID: 1801825814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 191
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1254ed61365d2644a828f3cb7f6bcab7
+      internalID: -617001541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_13
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 191
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf33490c295cd9449933e886013d17f
+      internalID: 1325770341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 153
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfc2f721dfe7f440bc723210aa843e1
+      internalID: -375781845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_15
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 153
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0c107ac68add84e820474a9f9af610
+      internalID: -260838568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 154
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f16ed363f300447bb2615a830b0609
+      internalID: -159859203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_17
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 155
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd2e716df9116c4b88c3490e31ca632
+      internalID: -2131325864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_18
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 156
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52801f3dfe5fdc248b7e7031b7a7e651
+      internalID: 1078660429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 156
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6ffc4842aad524aa604f09327c2981
+      internalID: 1892022057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_20
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 156
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6434ac84be91f8e42990438f8465c0c9
+      internalID: -202675105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_21
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 156
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11e2e6a9841027419f242a170a31c7a
+      internalID: 116722436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_22
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 74
+        width: 35
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63180d2719a65a2429873f2629599ac2
+      internalID: -354800465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_23
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 74
+        width: 35
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0602589288c75c343831bf1fefadf9a3
+      internalID: -373156303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_25
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 108
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308c280465d111547a17c7ca749e3077
+      internalID: 162604565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_27
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 108
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b672d84ad74c54e44836388973de31b4
+      internalID: -556273887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_29
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 108
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d90d7fee4543d4d87193f4857fccbc
+      internalID: 555542089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_33
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 82
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9c7b29c84380444bc546611a5abe0e
+      internalID: 1917483092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_35
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 80
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c5eb49ac0775d479b36b0bd13bb9d7
+      internalID: -1405339556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_36
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 81
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721f436a8b93d364db77df364213d765
+      internalID: -253188554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_39
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 85
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4c021389521f748996269016a606d2
+      internalID: -1387712514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_40
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 85
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141e4014839f4e24091e30392427b603
+      internalID: 1613259311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_46
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 46
+        width: 39
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ed3ab12aa36e74181f55c5e996e36c
+      internalID: -1422121294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_48
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 43
+        width: 53
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a833ec9ff20a064b96d479ff208e393
+      internalID: 2003924491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_50
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 44
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a6652fd99f21c4aa32932ba08cb936
+      internalID: -867141263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_53
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 45
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dba8c9649610a44a503fa2ce46cb0b
+      internalID: 2089547527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_55
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 32
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1b825b67a0de640a4cefaf77e6dbde
+      internalID: 2031130518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_57
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 33
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fdcbeaf02324048815617bb79acae3
+      internalID: -2022722983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_58
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 8
+        width: 45
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b93c0d5c2847342af6ea1684a80efe
+      internalID: -97723096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_61
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 20
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3a37e24ce1f8e45a31f53098930ca0
+      internalID: 1789421923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_63
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 21
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac56007fe4ab8f4fb7c5295a6114b17
+      internalID: 2114069034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects_isometric_clues_crime_scene_67
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 8
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036716704929b6541accf22e9963a4d0
+      internalID: 1510454184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      objects_isometric_clues_crime_scene_0: -1715087226
+      objects_isometric_clues_crime_scene_1: -53867571
+      objects_isometric_clues_crime_scene_10: -889862012
+      objects_isometric_clues_crime_scene_11: 1801825814
+      objects_isometric_clues_crime_scene_12: -617001541
+      objects_isometric_clues_crime_scene_13: 1325770341
+      objects_isometric_clues_crime_scene_14: -375781845
+      objects_isometric_clues_crime_scene_15: -260838568
+      objects_isometric_clues_crime_scene_16: -159859203
+      objects_isometric_clues_crime_scene_17: -2131325864
+      objects_isometric_clues_crime_scene_18: 1078660429
+      objects_isometric_clues_crime_scene_19: 1892022057
+      objects_isometric_clues_crime_scene_2: 1187361549
+      objects_isometric_clues_crime_scene_20: -202675105
+      objects_isometric_clues_crime_scene_21: 116722436
+      objects_isometric_clues_crime_scene_22: -354800465
+      objects_isometric_clues_crime_scene_23: -373156303
+      objects_isometric_clues_crime_scene_24: 736113091
+      objects_isometric_clues_crime_scene_25: 162604565
+      objects_isometric_clues_crime_scene_26: 1776946924
+      objects_isometric_clues_crime_scene_27: -556273887
+      objects_isometric_clues_crime_scene_28: -980991064
+      objects_isometric_clues_crime_scene_29: 555542089
+      objects_isometric_clues_crime_scene_3: 320112283
+      objects_isometric_clues_crime_scene_30: -1841260612
+      objects_isometric_clues_crime_scene_31: -2121859542
+      objects_isometric_clues_crime_scene_32: 1048659192
+      objects_isometric_clues_crime_scene_33: 1917483092
+      objects_isometric_clues_crime_scene_34: 2130768324
+      objects_isometric_clues_crime_scene_35: -1405339556
+      objects_isometric_clues_crime_scene_36: -253188554
+      objects_isometric_clues_crime_scene_37: 2046114859
+      objects_isometric_clues_crime_scene_38: 1256450683
+      objects_isometric_clues_crime_scene_39: -1387712514
+      objects_isometric_clues_crime_scene_4: -2032550205
+      objects_isometric_clues_crime_scene_40: 1613259311
+      objects_isometric_clues_crime_scene_41: -1868013318
+      objects_isometric_clues_crime_scene_42: -1933891571
+      objects_isometric_clues_crime_scene_43: -1179903092
+      objects_isometric_clues_crime_scene_44: 1027820827
+      objects_isometric_clues_crime_scene_45: -1608594089
+      objects_isometric_clues_crime_scene_46: -1422121294
+      objects_isometric_clues_crime_scene_47: -1189601195
+      objects_isometric_clues_crime_scene_48: 2003924491
+      objects_isometric_clues_crime_scene_49: 400511610
+      objects_isometric_clues_crime_scene_5: 994943164
+      objects_isometric_clues_crime_scene_50: -867141263
+      objects_isometric_clues_crime_scene_51: -415907392
+      objects_isometric_clues_crime_scene_52: 999056578
+      objects_isometric_clues_crime_scene_53: 2089547527
+      objects_isometric_clues_crime_scene_54: 1818444631
+      objects_isometric_clues_crime_scene_55: 2031130518
+      objects_isometric_clues_crime_scene_56: -443598604
+      objects_isometric_clues_crime_scene_57: -2022722983
+      objects_isometric_clues_crime_scene_58: -97723096
+      objects_isometric_clues_crime_scene_59: 13253372
+      objects_isometric_clues_crime_scene_6: 1219673402
+      objects_isometric_clues_crime_scene_60: -245889511
+      objects_isometric_clues_crime_scene_61: 1789421923
+      objects_isometric_clues_crime_scene_62: -2028290112
+      objects_isometric_clues_crime_scene_63: 2114069034
+      objects_isometric_clues_crime_scene_64: 2019914840
+      objects_isometric_clues_crime_scene_65: 23173636
+      objects_isometric_clues_crime_scene_66: -1459263258
+      objects_isometric_clues_crime_scene_67: 1510454184
+      objects_isometric_clues_crime_scene_68: -1792615823
+      objects_isometric_clues_crime_scene_69: 162461210
+      objects_isometric_clues_crime_scene_7: -654957244
+      objects_isometric_clues_crime_scene_70: 913728980
+      objects_isometric_clues_crime_scene_71: -1082011320
+      objects_isometric_clues_crime_scene_8: -771676960
+      objects_isometric_clues_crime_scene_9: -1570107429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
