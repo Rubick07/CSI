@@ -14,15 +14,7 @@ public class ClueGenerator : NetworkBehaviour
     private void Update()
     {
         if (!IsServer) return;
-        
-        if(StartTime > 0)
-        {
-            StartTime -= Time.deltaTime;
-        }
-        else if(!Isstart)
-        {
-            SpawnClue();
-        }
+       
         
     }
 

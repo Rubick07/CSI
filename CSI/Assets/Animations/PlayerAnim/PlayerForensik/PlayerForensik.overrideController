@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerForensik
+  m_Controller: {fileID: 9100000, guid: 62879d3112bdb3c46af9ffb24af237a5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 937ac3ee68f4c3a4d9b20d76bfb69791, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b0250a0f326b4df4e818201a83121a72, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ba1482609ac33d142b4c2218a37dc3f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4ef15c6896c2fc349af1af86b204d561, type: 2}

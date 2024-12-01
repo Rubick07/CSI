@@ -33,7 +33,7 @@ public class PlayerInput : NetworkBehaviour
         
         rb = GetComponent<Rigidbody2D>();
         
-        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos((int)OwnerClientId);
+        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos(Role.Value);
         transform.position = new Vector2(oke.position.x, oke.position.y);
         
     }
@@ -46,7 +46,18 @@ public class PlayerInput : NetworkBehaviour
             Playercamera.gameObject.SetActive(false);
             return;
         }
-        
+        if (GameManager.Instance.IsWaitingToStart())
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SetLocalPlayerReady();
+            }
+            return;
+        }
+        if (!GameManager.Instance.IsGamePlaying())
+        {
+            return;
+        }
         PlayerInputSystem();
 
     }
@@ -63,7 +74,7 @@ public class PlayerInput : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SetLocalPlayerReady();
+            
             Interact();
         }
 

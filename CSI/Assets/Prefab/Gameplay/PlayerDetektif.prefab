@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2384602610596691502}
   - component: {fileID: 7209285098857740327}
   m_Layer: 6
-  m_Name: Player
+  m_Name: PlayerDetektif
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3725308466
+  GlobalObjectIdHash: 477100777
   InScenePlacedSourceGlobalObjectIdHash: 3984593592
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -359,7 +359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  Role: 0
   PickUpObject: {fileID: 0}
   speed: 5
   InteractRange: 2

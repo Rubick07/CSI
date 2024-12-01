@@ -26,7 +26,8 @@ public class GameManager : NetworkBehaviour
         GameOver,
     }
 
-    [SerializeField] private Transform playerPrefab;
+    [SerializeField] private Transform DetektifplayerPrefab;
+    [SerializeField] private Transform ForensikplayerPrefab;
     private NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
     private bool isLocalPlayerReady;
     private NetworkVariable<float> countdownToStartTimer = new NetworkVariable<float>(3f);
@@ -52,7 +53,7 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
-        Debug.Log(IsGamePlaying());
+        //Debug.Log(IsGamePlaying());
         switch (state.Value)
         {
             case State.WaitingToStart:
@@ -61,6 +62,7 @@ public class GameManager : NetworkBehaviour
                 countdownToStartTimer.Value -= Time.deltaTime;
                 if (countdownToStartTimer.Value < 0f)
                 {
+                    FindAnyObjectByType<ClueGenerator>().GetComponent<ClueGenerator>().SpawnClue();
                     state.Value = State.GamePlaying;
                     gamePlayingTimer.Value = gamePlayingTimerMax;
                 }
@@ -123,10 +125,21 @@ public class GameManager : NetworkBehaviour
     {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
-            Transform playerTransform = Instantiate(playerPrefab);
+
+            
             PlayerData playerData = CSIGameMultiplayer.Instance.GetPlayerDataFromClientId(clientId);
-            playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
-            playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
+            if(playerData.playerRole == PlayerRole.Detektif)
+            {
+                Transform playerTransform = Instantiate(DetektifplayerPrefab);
+                playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
+            }
+            else if(playerData.playerRole == PlayerRole.Forensik)
+            {
+                Transform playerTransform = Instantiate(ForensikplayerPrefab);
+                playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
+            }
         }
     }
 
@@ -178,6 +191,10 @@ public class GameManager : NetworkBehaviour
         return state.Value == State.GamePlaying;
     }
 
+    public bool IsWaitingToStart()
+    {
+        return state.Value == State.WaitingToStart;
+    }
     public bool IsCountdownToStartActive()
     {
         return state.Value == State.CountdownToStart;
@@ -191,11 +208,6 @@ public class GameManager : NetworkBehaviour
     public bool IsGameOver()
     {
         return state.Value == State.GameOver;
-    }
-
-    public bool IsWaitingToStart()
-    {
-        return state.Value == State.WaitingToStart;
     }
 
     public bool IsLocalPlayerReady()

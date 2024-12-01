@@ -10,7 +10,7 @@ public class CulpritsGenerator : NetworkBehaviour
     [SerializeField] List<int> _CulpritIndex;
     [SerializeField] TMP_Text _Culpritstxt;
     [SerializeField] float Countdown;
-
+    private NetworkVariable<int> SelectedCulpritIndex = new NetworkVariable<int>(0);
     private NetworkVariable<CulpritData> randomCulprit = new NetworkVariable<CulpritData>(new CulpritData
     {
         _int = null,
@@ -50,10 +50,12 @@ public class CulpritsGenerator : NetworkBehaviour
             foreach(int i in randomCulprit.Value._int)
             {
                 Journal._instance.AddCulprits(_culprits[i]);
+                SelectCulpritUI.instance.addCulprits(_culprits[i]);
             }
             _Culpritstxt.text = _CulpritIndex[0].ToString();
             return;
         }
+       
         Debug.Log("asdf");
 
 
@@ -71,11 +73,13 @@ public class CulpritsGenerator : NetworkBehaviour
                 generateNumber = Random.Range(0, _culprits.Length);
             }
             _CulpritIndex.Add(generateNumber);
-
+            Debug.Log("Oke");
             Journal._instance.AddCulprits(_culprits[generateNumber]);
+            SelectCulpritUI.instance.addCulprits(_culprits[generateNumber]);
         }
+        SelectedCulpritIndex.Value = Random.Range(0, _CulpritIndex.Count);
         randomCulprit.Value = new CulpritData { _int = _CulpritIndex.ToArray() };
-        _Culpritstxt.text = _CulpritIndex[0].ToString();
+        _Culpritstxt.text = _CulpritIndex[SelectedCulpritIndex.Value].ToString();
     }
 
     /*
@@ -89,7 +93,7 @@ public class CulpritsGenerator : NetworkBehaviour
     */
     public CulpritSO GetCulprit()
     {
-        return _culprits[_CulpritIndex[0]];
+        return _culprits[SelectedCulpritIndex.Value];
     }
 
     public List<int> getAllCulpritsIndex()

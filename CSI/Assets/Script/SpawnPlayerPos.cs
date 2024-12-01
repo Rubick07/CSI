@@ -6,9 +6,16 @@ public class SpawnPlayerPos : MonoBehaviour
 {
     [SerializeField] Transform[] SpawnPos;
     
-    public Transform GetPos(int index)
+    public Transform GetPos(PlayerRole playerRole)
     {
-        return SpawnPos[index];
+        if(playerRole == PlayerRole.Detektif)
+        {
+            return SpawnPos[0];
+        }
+        else 
+        {
+            return SpawnPos[1];
+        }
     }
 
 }

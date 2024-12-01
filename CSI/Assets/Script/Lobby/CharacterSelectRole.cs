@@ -29,23 +29,4 @@ public class CharacterSelectRole : MonoBehaviour
     {
         //UpdateIsSelected();
     }
-    /*
-    private void UpdateIsSelected()
-    {
-        if (KitchenGameMultiplayer.Instance.GetPlayerData().colorId == colorId)
-        {
-            selectedGameObject.SetActive(true);
-        }
-        else
-        {
-            selectedGameObject.SetActive(false);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        KitchenGameMultiplayer.Instance.OnPlayerDataNetworkListChanged -= KitchenGameMultiplayer_OnPlayerDataNetworkListChanged;
-    }
-
-    */
 }
