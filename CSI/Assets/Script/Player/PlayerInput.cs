@@ -23,14 +23,14 @@ public class PlayerInput : NetworkBehaviour
     Vector2 movement;
     Rigidbody2D rb;
     private bool OpenJournal = false;
-
+    private Animator animator;
 
     public static PlayerInput LocalInstance { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         
         Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos(Role.Value);
@@ -149,8 +149,7 @@ public class PlayerInput : NetworkBehaviour
     #region PickUpObject
 
     public GameObject GetPickUpObject()
-    {
-        
+    {       
         return PickUpObject;
     }
 
