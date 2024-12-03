@@ -6,30 +6,34 @@ using Cinemachine;
 using System;
 
 public enum PlayerState {idle, walk, OpenComputer}
-public enum PlayerRole {Detektif, Forensik }
+public enum PlayerRole {Detektif, Forensik, Neutral}
 
 public class PlayerInput : NetworkBehaviour
 {
+    [Header("PlayerState")]
     public PlayerState state;
-    public PlayerRole Role;
+    NetworkVariable <PlayerRole> Role = new NetworkVariable<PlayerRole>(PlayerRole.Neutral);
+    [Header("PickUp SetUp")]
     [SerializeField] private GameObject PickUpObject;
     [SerializeField] private float speed;
     [SerializeField] private float InteractRange;
     [SerializeField] LayerMask InteractLayer;
+    [Header("Camera SetUp")]
     [SerializeField] Camera Playercamera;
     Vector2 movement;
     Rigidbody2D rb;
     private bool OpenJournal = false;
+    private Animator animator;
 
     public static PlayerInput LocalInstance { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         
-        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos((int)OwnerClientId);
+        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos(Role.Value);
         transform.position = new Vector2(oke.position.x, oke.position.y);
         
     }
@@ -42,7 +46,18 @@ public class PlayerInput : NetworkBehaviour
             Playercamera.gameObject.SetActive(false);
             return;
         }
-
+        if (GameManager.Instance.IsWaitingToStart())
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SetLocalPlayerReady();
+            }
+            return;
+        }
+        if (!GameManager.Instance.IsGamePlaying())
+        {
+            return;
+        }
         PlayerInputSystem();
 
     }
@@ -52,8 +67,14 @@ public class PlayerInput : NetworkBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+
         if (Input.GetKeyDown(KeyCode.F))
         {
+            
             Interact();
         }
 
@@ -62,6 +83,11 @@ public class PlayerInput : NetworkBehaviour
             Journal._instance.UpdatePage();
             OpenCloseJournal();
         }
+    }
+
+    private void PauseGame()
+    {
+        GameManager.Instance.TogglePauseGame();
     }
 
     private void FixedUpdate()
@@ -86,6 +112,11 @@ public class PlayerInput : NetworkBehaviour
 
     }
 
+    private void SetLocalPlayerReady()
+    {
+        GameManager.Instance.GameInputSetLocalPlayerReady();
+    }
+
     private void OpenCloseJournal()
     {
         OpenJournal = !OpenJournal;
@@ -97,6 +128,11 @@ public class PlayerInput : NetworkBehaviour
     public void ChangePlayerState(PlayerState NewplayerState)
     {
         state = NewplayerState;
+    }
+
+    public void ChangePlayerRole(PlayerRole NewplayerRole)
+    {
+        Role.Value = NewplayerRole;
     }
 
     public override void OnNetworkSpawn()
@@ -113,8 +149,7 @@ public class PlayerInput : NetworkBehaviour
     #region PickUpObject
 
     public GameObject GetPickUpObject()
-    {
-        
+    {       
         return PickUpObject;
     }
 

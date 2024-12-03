@@ -8,7 +8,8 @@ using Unity.Netcode;
 public enum JournalState
 {
     Profile,
-    Evidence
+    Evidence,
+    Case
 }
 
 [System.Serializable]
@@ -25,15 +26,24 @@ public class Journal : NetworkBehaviour
     [SerializeField] private JournalState state;
 
     [Header("Profile SetUp")]    
-    [SerializeField] private GameObject Profile;
+    [SerializeField] private GameObject ProfileUI;
     [SerializeField] private Image Profileimage;
     [SerializeField] private TMP_Text ProfileNametext;
     [SerializeField] private TMP_Text Alibitext;
     [Header("Evidence SetUp")]
-    [SerializeField] private GameObject Evidence;
-    [SerializeField] private Image Evidenceimage;
+    [SerializeField] private GameObject EvidenceUI;
+    [SerializeField] private Button[] EvidenceSelectButton;
     [SerializeField] private TMP_Text Evidencetext;
-    
+    private int IndexAddedEvidence = 0;
+    [Header("Case SetUp")]
+    [SerializeField] private GameObject CaseUI;
+    [SerializeField] private TMP_Text Case;
+    [SerializeField] private TMP_Text CaseStory;
+    [SerializeField] private TMP_Text AutopsyReportAtas;
+    [SerializeField] private TMP_Text AutopsyReportBawah;
+    [Header("Others")]
+    [SerializeField] private Button NextButton;
+    [SerializeField] private Button BackButton;
     [SerializeField] private Animator JournalAnimation;
     [SerializeField] private List<CulpritSO> culprits;
     [SerializeField] private List<Page> cluesUnlocked;
@@ -75,6 +85,15 @@ public class Journal : NetworkBehaviour
     public void AddUnlockedClues(Page clue)
     {
         cluesUnlocked.Add(clue);
+        int oke = IndexAddedEvidence;
+        EvidenceSelectButton[oke].onClick.AddListener(() =>
+        {
+            Evidencetext.text = cluesUnlocked[oke].description;
+        });
+        EvidenceSelectButton[oke].interactable = true;
+        EvidenceSelectButton[oke].GetComponent<Image>().sprite = cluesUnlocked[IndexAddedEvidence].img;
+        
+        IndexAddedEvidence++;
     }
 
     public void UpdatePage()
@@ -88,7 +107,11 @@ public class Journal : NetworkBehaviour
         else if(state == JournalState.Evidence)
         {
             //Evidenceimage.sprite = cluesUnlocked[index].img;
-            Evidencetext.text = cluesUnlocked[index].description;
+            //Evidencetext.text = cluesUnlocked[index].description;
+
+        }
+        else
+        {
 
         }
 
@@ -99,10 +122,10 @@ public class Journal : NetworkBehaviour
         Profileimage.sprite = culprits[0].CulpritPhoto;
         ProfileNametext.text = culprits[0].CulpritName;
 
-        Evidenceimage.sprite = cluesUnlocked[0].img;
+        //Evidenceimage.sprite = cluesUnlocked[0].img;
         Evidencetext.text = cluesUnlocked[0].description;
     }
-
+    #region ButtonFunction
     public void NextPage()
     {
 
@@ -137,9 +160,9 @@ public class Journal : NetworkBehaviour
     {
         if (state == JournalState.Profile) return;
         index = 0;
-        Profile.SetActive(true);
-        Evidence.SetActive(false);
         state = JournalState.Profile;
+        SetUIButton(true);
+        ChangeUI(state);
         UpdatePage();
     }
 
@@ -148,13 +171,23 @@ public class Journal : NetworkBehaviour
         if (cluesUnlocked.Count == 0) return;
         if (state == JournalState.Evidence) return;
         index = 0;
-        Profile.SetActive(false);
-        Evidence.SetActive(true);
         state = JournalState.Evidence;
+        SetUIButton(false);
+        ChangeUI(state);
         UpdatePage();
     }
 
+    public void ChangeToCase()
+    {
+        if (state == JournalState.Case) return;
+        index = 0;
+        state = JournalState.Case;
+        SetUIButton(false);
+        ChangeUI(state);
+        UpdatePage();
+    }
 
+    #endregion
     public void PlayAnimation(string TriggerName)
     {
         JournalAnimation.SetTrigger(TriggerName);
@@ -172,6 +205,33 @@ public class Journal : NetworkBehaviour
 
     }
 
+    public void ChangeUI(JournalState state)
+    {
+        if(state == JournalState.Profile)
+        {
+            ProfileUI.SetActive(true);
+            EvidenceUI.SetActive(false);
+            CaseUI.SetActive(false);
+        }
+        else if(state == JournalState.Evidence)
+        {
+            ProfileUI.SetActive(false);
+            EvidenceUI.SetActive(true);
+            CaseUI.SetActive(false);
+        }
+        else
+        {
+            ProfileUI.SetActive(false);
+            EvidenceUI.SetActive(false);
+            CaseUI.SetActive(true);
+        }
+    }
+
+    public void SetUIButton(bool oke)
+    {
+        NextButton.gameObject.SetActive(oke);
+        BackButton.gameObject.SetActive(oke);
+    }
 }
 
 

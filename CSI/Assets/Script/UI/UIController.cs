@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider _musicSlider, _SfxSlider;
-    //public Settings settings;
+    public Settings settings;
     private void Start()
     {
-        _musicSlider.value = AudioManager.Instance.musicSource.volume;
-        _SfxSlider.value = AudioManager.Instance.sfxSource.volume;
+        //_musicSlider.value = AudioManager.Instance.musicSource.volume;
+        //_SfxSlider.value = AudioManager.Instance.sfxSource.volume;
     }
 
     public void Pause(bool Pause)
@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
 
     public void SaveSettings()
     {
-        //settings.SaveSettings();
+        settings.SaveSettings();
     }
 
     #endregion
@@ -48,13 +48,13 @@ public class UIController : MonoBehaviour
     public void MusicVolume()
     {
         AudioManager.Instance.MusicVolume(_musicSlider.value);
-        //settings.MusicSet = _musicSlider.value;
+        settings.MusicSet = _musicSlider.value;
     }
 
     public void SfxVolume()
     {
         AudioManager.Instance.SFXVolume(_SfxSlider.value);
-        //settings.SFXSet = _SfxSlider.value;
+        settings.SFXSet = _SfxSlider.value;
     }
     #endregion
 }

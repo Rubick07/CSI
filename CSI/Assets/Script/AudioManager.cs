@@ -5,6 +5,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    public Settings settings;
     public Sound[] musicSound;
     public Sound[] sfxSound;
     public AudioSource musicSource;
@@ -25,9 +26,9 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        //settings.LoadSettings();
-        //musicSource.volume = settings.MusicSet;
-        //sfxSource.volume = settings.SFXSet;
+        settings.LoadSettings();
+        musicSource.volume = settings.MusicSet;
+        sfxSource.volume = settings.SFXSet;
     }
     public void PlayMusic(string name)
     {
