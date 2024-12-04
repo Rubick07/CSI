@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a734637ef25a9004381f46cb5cfc9eac
+guid: ec4c96340b9e2c8499684e597724ba7e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 1
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,43 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_charles_idle_0
+      name: spritesheet_charles_idle_back_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 4
         y: 0
-        width: 19
-        height: 48
+        width: 20
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7122fbe1a7ba654d9541fd15cfde4ab
-      internalID: 206589121
+      spriteID: e4f8af29d5634ff4ea245913320592e4
+      internalID: -2028787666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_charles_idle_1
+      name: spritesheet_charles_idle_back_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 36
         y: 0
-        width: 19
-        height: 47
+        width: 20
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a07e5ccce2cab4b8026d7426d5fac8
-      internalID: 708888054
+      spriteID: 4138b64539dc106498ebc6cd2b1d35f1
+      internalID: 577193864
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_charles_idle_0: 206589121
-      spritesheet_charles_idle_1: 708888054
+      spritesheet_charles_idle_back_0: -2028787666
+      spritesheet_charles_idle_back_1: 577193864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

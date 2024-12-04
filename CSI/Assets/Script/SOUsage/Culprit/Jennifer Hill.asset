@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Jennifer Hill
   m_EditorClassIdentifier: 
   CulpritName: Jennifer Hill
+  CulpritPhoto: {fileID: 21300000, guid: 4a2c986140c57c8438ef8f313c619fa0, type: 3}
   Bukti: []

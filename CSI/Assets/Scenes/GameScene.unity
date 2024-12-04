@@ -4862,7 +4862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853324029}
         m_TargetAssemblyTypeName: Journal, Assembly-CSharp
         m_MethodName: NextPage
         m_Mode: 1
@@ -8007,7 +8007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853324029}
         m_TargetAssemblyTypeName: Journal, Assembly-CSharp
         m_MethodName: PrevPage
         m_Mode: 1
@@ -8368,7 +8368,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853324029}
         m_TargetAssemblyTypeName: Journal, Assembly-CSharp
         m_MethodName: ChangeToEvidence
         m_Mode: 1
@@ -8724,6 +8724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DetektifplayerPrefab: {fileID: 321762893801468150, guid: 3467f369da0dd8f4193d32cf38921ef4, type: 3}
   ForensikplayerPrefab: {fileID: 8456446603719929593, guid: 86cb01ad16adbfb4eac38c942ab50a5f, type: 3}
+  gamePlayingTimerMax: 90
 --- !u!4 &1128427013
 Transform:
   m_ObjectHideFlags: 0
@@ -10123,7 +10124,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853324029}
         m_TargetAssemblyTypeName: Journal, Assembly-CSharp
         m_MethodName: ChangeToProfile
         m_Mode: 1
@@ -14118,7 +14119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853324029}
         m_TargetAssemblyTypeName: Journal, Assembly-CSharp
         m_MethodName: ChangeToCase
         m_Mode: 1
