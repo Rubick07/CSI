@@ -220,6 +220,11 @@ public class GameManager : NetworkBehaviour
         return 1 - (gamePlayingTimer.Value / gamePlayingTimerMax);
     }
 
+    public float GetGamePlayingTimer()
+    {
+        return gamePlayingTimer.Value;
+    }
+
     #endregion
 
     #region PauseFunction

@@ -13,6 +13,7 @@ public enum ClueProcessState
 public class TableInteract : Interactable
 {
     [SerializeField] private float _TimeToScan;
+    [SerializeField] private Transform SpawnCluePosition;
     float _timeTemp;
     [SerializeField] Animator animatorPopUpProcess;
     [SerializeField] Animator animatorPopUpDone;
@@ -46,7 +47,7 @@ public class TableInteract : Interactable
     private void ClueProcessDone()
     {
         animatorPopUpDone.SetTrigger("Process");
-        ClueProcessReadyPickUp = Instantiate(_BuktiObject, transform);
+        ClueProcessReadyPickUp = Instantiate(_BuktiObject, SpawnCluePosition);
         ClueProcessReadyPickUp.SetUpClue(_Bukti.GetComponent<PickUpInteract>().GetClue());
         ClueProcessReadyPickUp.GetComponent<NetworkObject>().Spawn(true);
         state = ClueProcessState.done;

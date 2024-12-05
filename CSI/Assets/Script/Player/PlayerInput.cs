@@ -48,7 +48,7 @@ public class PlayerInput : NetworkBehaviour
         }
         if (GameManager.Instance.IsWaitingToStart())
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 SetLocalPlayerReady();
             }
@@ -73,7 +73,7 @@ public class PlayerInput : NetworkBehaviour
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             
             Interact();
@@ -142,6 +142,11 @@ public class PlayerInput : NetworkBehaviour
     public void ChangePlayerState(PlayerState NewplayerState)
     {
         state = NewplayerState;
+    }
+
+    public PlayerRole GetPlayerRole()
+    {
+        return Role.Value;
     }
 
     public void ChangePlayerRole(PlayerRole NewplayerRole)

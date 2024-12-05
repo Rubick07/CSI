@@ -67,7 +67,7 @@ public class SelectCulpritUI : MonoBehaviour
 
     private void OnGameOver(object sender, System.EventArgs e)
     {
-        if (GameManager.Instance.IsGameOver())
+        if (GameManager.Instance.IsGameOver() && PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Detektif)
         {
             Debug.Log("adf");
             animator.SetTrigger("FadeIn");
