@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Hailey Parker
   m_EditorClassIdentifier: 
   CulpritName: Hailey Parker
-  Bukti: []
+  CulpritPhoto: {fileID: 21300000, guid: 4a2c986140c57c8438ef8f313c619fa0, type: 3}
+  Bukti:
+  - {fileID: 5351712967058697458, guid: 49130d6787605024083dda68c789fbda, type: 3}
+  - {fileID: 3972964321760724516, guid: 86ec07ef876bbbb4bbabde7c2cf1fe84, type: 3}
+  - {fileID: 2040134416221337680, guid: c180f30c55217a146bdf8284d5c413c4, type: 3}
+  - {fileID: 367897107638950026, guid: 0e7725af884d11d48b62c1e61b9f4de9, type: 3}
+  - {fileID: 4634348565805342350, guid: 80e6442c7f0d2564ca336ccbaa386490, type: 3}

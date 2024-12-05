@@ -62,7 +62,7 @@ public class GameManager : NetworkBehaviour
                 countdownToStartTimer.Value -= Time.deltaTime;
                 if (countdownToStartTimer.Value < 0f)
                 {
-//                    FindAnyObjectByType<ClueGenerator>().GetComponent<ClueGenerator>().SpawnClue();
+                    FindAnyObjectByType<ClueGenerator>().GetComponent<ClueGenerator>().SpawnClue();
                     state.Value = State.GamePlaying;
                     gamePlayingTimer.Value = gamePlayingTimerMax;
                 }

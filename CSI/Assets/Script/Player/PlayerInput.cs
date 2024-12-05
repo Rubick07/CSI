@@ -172,6 +172,18 @@ public class PlayerInput : NetworkBehaviour
         return PickUpObject;
     }
 
+    public bool ThereisObject()
+    {
+        if(PickUpObject == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void SetPickUpObject(GameObject item)
     {
         PickUpObject = item;

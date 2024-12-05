@@ -8,6 +8,7 @@ public class PickUpInteract : Interactable
     [SerializeField] private Clue clue;
     public override void Interact()
     {
+        Debug.Log(player);
         if(player.GetComponent<PlayerInput>().GetPickUpObject() == null)
         {
             PickUpServerRpc();

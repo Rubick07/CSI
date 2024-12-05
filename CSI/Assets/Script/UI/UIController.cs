@@ -9,8 +9,8 @@ public class UIController : MonoBehaviour
     public Settings settings;
     private void Start()
     {
-        //_musicSlider.value = AudioManager.Instance.musicSource.volume;
-        //_SfxSlider.value = AudioManager.Instance.sfxSource.volume;
+        _musicSlider.value = AudioManager.Instance.musicSource.volume;
+        _SfxSlider.value = AudioManager.Instance.sfxSource.volume;
     }
 
     public void Pause(bool Pause)

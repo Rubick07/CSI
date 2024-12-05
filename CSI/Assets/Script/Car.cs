@@ -67,15 +67,15 @@ public class Car : NetworkBehaviour
 
     public void ClueArrive()
     {
-        ClueToDeliver.transform.localPosition = new Vector3(0, 0, 0);    
-        GameObject oke = Instantiate(ClueToDeliver, TempatClueNyampe);
-        oke.GetComponent<NetworkObject>().Spawn(true);
+        ClueToDeliver.transform.position = TempatClueNyampe.position;
+        //GameObject oke = Instantiate(ClueToDeliver, TempatClueNyampe);
+        //oke.GetComponent<NetworkObject>().Spawn(true);
         //oke.transform.SetParent(TempatClueNyampe);
         //oke.transform.localPosition = new Vector3(0, 0, 0);        
-        oke.SetActive(true);
+        ClueToDeliver.SetActive(true);
 
         //ClueToDeliver.GetComponent<NetworkObject>().Despawn(true);
-        Destroy(ClueToDeliver);
+        //Destroy(ClueToDeliver);
 
 
         ClueToDeliver = null;

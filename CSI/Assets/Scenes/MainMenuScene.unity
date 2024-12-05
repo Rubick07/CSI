@@ -3280,7 +3280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1539168860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa7a8f85fb434d41b263e0821170911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
+  settings: {fileID: 11400000, guid: efbb4f0fbfae5c64cb93fc2c60d95c15, type: 2}
   musicSound: []
   sfxSound: []
   musicSource: {fileID: 1757854775}
