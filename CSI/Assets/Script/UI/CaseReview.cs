@@ -45,8 +45,6 @@ public class CaseReview : MonoBehaviour
         if (Benar == false)
         {
             CulpritFoundText.text = "Wrong";
-            
-
         }
         else
         {

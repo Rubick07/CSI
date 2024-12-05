@@ -10,14 +10,23 @@ public class PlayerProfileUI : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Detektif)
+        GameManager.Instance.OnStateChanged += OnGameStart;
+    }
+
+    private void OnGameStart(object sender, System.EventArgs e)
+    {
+        if (GameManager.Instance.IsGamePlaying())
         {
-            PlayerProfile.sprite = PlayerSpriteProfile[0];
-        }
-        else if(PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Forensik)
-        {
-            PlayerProfile.sprite = PlayerSpriteProfile[1];
+            if (PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Detektif)
+            {
+                PlayerProfile.sprite = PlayerSpriteProfile[0];
+            }
+            else if (PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Forensik)
+            {
+                PlayerProfile.sprite = PlayerSpriteProfile[1];
+            }
         }
     }
+
 
 }

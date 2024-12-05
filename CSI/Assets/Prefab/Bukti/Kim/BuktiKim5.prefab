@@ -296,7 +296,7 @@ MonoBehaviour:
   clue:
     ClueName: Rambut
     imgIndex: 5
-    description: Dari Bentuk Sepatu tersangka dapat diperkirakan perempuan
+    description: 'Ditemukan Rambut bewarna pink di dalam baju korban '
 --- !u!58 &7986644151008000004
 CircleCollider2D:
   m_ObjectHideFlags: 0

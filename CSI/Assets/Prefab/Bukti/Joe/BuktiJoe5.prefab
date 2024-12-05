@@ -162,7 +162,7 @@ MonoBehaviour:
   clue:
     ClueName: Rambut
     imgIndex: 5
-    description: 'Ditemukan Rambut bewarna pink di dalam baju korban '
+    description: 'Ditemukan Rambut bewarna putih di dalam baju korban '
 --- !u!58 &6618899773713592912
 CircleCollider2D:
   m_ObjectHideFlags: 0

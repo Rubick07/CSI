@@ -54,12 +54,12 @@ public class SelectCulpritUI : NetworkBehaviour
         if (culpritslist[selectedculprits] == culpritsGenerator.GetCulprit())
         {
             //Debug.Log("Benar");
-            CasereviewClientRpc(true);
+            CasereviewServerRpc(true);
         }
         else
         {
             //Debug.Log("Salah");
-            CasereviewClientRpc(false);
+            CasereviewServerRpc(false);
         }
         Hide();
     }
@@ -93,6 +93,12 @@ public class SelectCulpritUI : NetworkBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    [ServerRpc (RequireOwnership = false)]
+    private void CasereviewServerRpc(bool oke)
+    {
+        CasereviewClientRpc(oke);
     }
 
     [ClientRpc]

@@ -162,7 +162,7 @@ MonoBehaviour:
   clue:
     ClueName: GolonganDarah
     imgIndex: 1
-    description: Gologan darah pelaku AB
+    description: Gologan darah pelaku A
 --- !u!58 &7695629981045295303
 CircleCollider2D:
   m_ObjectHideFlags: 0
