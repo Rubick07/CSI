@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: Kim Soona
   m_EditorClassIdentifier: 
   CulpritName: Kim Soona
-  Bukti: []
+  CulpritPhoto: {fileID: 21300000, guid: 6965722f8ed3f4c4aa7b64273a77e390, type: 3}
+  CulpritDesc: Soona is a manager and division leader for a renowned tech company.
+    Her deifning features are her long black hair, glasses which are only for style
+    and fashion, gem like earrings, and many gadgets that she held in her pocket
+    and bags. She is usually tidy and has a small bag carrying all her gadgets, cosmetics,
+    and her wallet. Her blood type is A
+  Bukti:
+  - {fileID: 5224281283566693592, guid: f03ff9f26f81624438a3e9ce57fe2db4, type: 3}
+  - {fileID: 5268732626008283938, guid: 77ab6f70e2b3de644915a9d46ca046d3, type: 3}
+  - {fileID: 279104791402822558, guid: 2ccc1ac4ca5252c44ba25be049f8e094, type: 3}
+  - {fileID: 2306992617139917464, guid: 61c7f95254898a349a206c36fe8ce9e8, type: 3}
+  - {fileID: 3470060316780453666, guid: cb41cd48f3e7d7142adf8029694bf4ac, type: 3}

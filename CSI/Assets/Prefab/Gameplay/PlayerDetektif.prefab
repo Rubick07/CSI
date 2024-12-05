@@ -324,8 +324,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026733756, y: -0.00000011920929}
-  m_Size: {x: 0.5545509, y: 1.5101852}
+  m_Offset: {x: 0.026733756, y: -0.41207147}
+  m_Size: {x: 0.5545509, y: 0.68604255}
   m_Direction: 0
 --- !u!114 &955019552664330215
 MonoBehaviour:
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 477100777
+  GlobalObjectIdHash: 3984593592
   InScenePlacedSourceGlobalObjectIdHash: 3984593592
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   PickUpObject: {fileID: 0}
-  speed: 5
+  speed: 3
   InteractRange: 2
   InteractLayer:
     serializedVersion: 2

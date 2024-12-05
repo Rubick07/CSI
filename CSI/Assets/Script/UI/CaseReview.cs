@@ -13,6 +13,7 @@ public class CaseReview : MonoBehaviour
     [SerializeField] private TMP_Text CaseGradeText;
     [SerializeField] private TMP_Text CaseGradeTitleText;
     [SerializeField] private Button playAgainButton;
+    private CanvasGroup canvasGroup;
     private bool Benar;
 
     private void Awake()
@@ -21,6 +22,7 @@ public class CaseReview : MonoBehaviour
             NetworkManager.Singleton.Shutdown();
             Loader.Load(Loader.Scene.MainMenuScene);
         });
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     private void Start()
@@ -29,8 +31,11 @@ public class CaseReview : MonoBehaviour
     }
     public void Jawaban(bool oke)
     {
+        AudioManager.Instance.PlayMusic("CaseReview");
         gameObject.SetActive(true);
         Benar = oke;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
         SetCaseReview();
     }
 

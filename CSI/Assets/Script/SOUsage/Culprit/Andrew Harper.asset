@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CulpritName: Andrew Harper
   CulpritPhoto: {fileID: 21300000, guid: c77351c4a08eb4f459310d3e6e8ea88e, type: 3}
+  CulpritDesc: Andrew is a bright person that is iconic for his green hair and friendly
+    personality. He often wears green  clothes and usually is covered in mud or dirt
+    in some places beacuse of his tendency to help people. He always wears a big
+    glove as part of his costume. As a worker in a convinience store, inside his
+    wallet reciepts and vouchers are usually found. His blood type is O
   Bukti:
   - {fileID: 6620268474417094345, guid: e5024a9d93d5c3d48843366170f699c4, type: 3}
   - {fileID: 8115423699486162853, guid: 433d4ccd3b52edd43b4b7dd80688a345, type: 3}

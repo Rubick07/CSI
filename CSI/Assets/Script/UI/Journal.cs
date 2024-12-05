@@ -29,6 +29,7 @@ public class Journal : NetworkBehaviour
     [SerializeField] private GameObject ProfileUI;
     [SerializeField] private Image Profileimage;
     [SerializeField] private TMP_Text ProfileNametext;
+    [SerializeField] private TMP_Text Descriptiontext;
     [SerializeField] private TMP_Text Alibitext;
     [Header("Evidence SetUp")]
     [SerializeField] private GameObject EvidenceUI;
@@ -102,6 +103,7 @@ public class Journal : NetworkBehaviour
         {
             Profileimage.sprite = culprits[index].CulpritPhoto;
             ProfileNametext.text = culprits[index].CulpritName;
+            Descriptiontext.text = culprits[index].CulpritDesc;
             //Alibitext.text = cluesUnlocked[index].description;
         }
         else if(state == JournalState.Evidence)
@@ -129,7 +131,7 @@ public class Journal : NetworkBehaviour
     public void NextPage()
     {
 
-        if (index + 1 == cluesUnlocked.Count)
+        if (index + 1 == culprits.Count)
         {
             index = 0;
         }
@@ -146,7 +148,7 @@ public class Journal : NetworkBehaviour
 
         if (index == 0)
         {
-            index = cluesUnlocked.Count -1;
+            index = culprits.Count -1;
         }
         else
         {

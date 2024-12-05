@@ -48,7 +48,7 @@ public class Computer : NetworkBehaviour
             PasswordUI.SetActive(false);
             UnlockedUI.SetActive(true);
             OutputText.text = "CORRECT";
-            
+            AudioManager.Instance.PlaySFX("LockOpen");
         }
         else
         {

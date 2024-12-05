@@ -153,8 +153,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026733756, y: -0.00000011920929}
-  m_Size: {x: 0.5545509, y: 1.5101852}
+  m_Offset: {x: 0.026733756, y: -0.42399904}
+  m_Size: {x: 0.5545509, y: 0.6621874}
   m_Direction: 0
 --- !u!114 &931466779268918622
 MonoBehaviour:
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   PickUpObject: {fileID: 0}
-  speed: 5
+  speed: 3
   InteractRange: 2
   InteractLayer:
     serializedVersion: 2

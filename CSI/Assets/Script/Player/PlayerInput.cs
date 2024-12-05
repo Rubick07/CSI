@@ -124,6 +124,7 @@ public class PlayerInput : NetworkBehaviour
         }
         animator.SetFloat("InputX", movement.x);
         animator.SetFloat("InputY", movement.y);
+        AudioManager.Instance.PlaySFX("Walk");
     }
 
     private void SetLocalPlayerReady()

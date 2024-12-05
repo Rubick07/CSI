@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: Joe Matthews
   m_EditorClassIdentifier: 
   CulpritName: Joe Matthews
-  Bukti: []
+  CulpritPhoto: {fileID: 21300000, guid: 48dca724d6b262e4bb26cbfba539da74, type: 3}
+  CulpritDesc: Joe is a barista that is iconic with his white hair and black beard.
+    He loves coffee so much that sometimes stains of coffee can be found on his clothes
+    and he loves to wear a necktie combined with a suit to show his professionalism.
+    He is a very knowledgable person, it shows as he is always carrying at least
+    a book with him everywhere he goes. His blood type is AB
+  Bukti:
+  - {fileID: 3901207267410983019, guid: f63bce6edf7961740adf256e00d66b9e, type: 3}
+  - {fileID: 1469380904495669380, guid: 23384fb9f28b1fa409d54769645b8037, type: 3}
+  - {fileID: 156699612287331813, guid: e2bd159eaab6afc498fee33312aea51c, type: 3}
+  - {fileID: 8182314637445909710, guid: 4b60121a4c1d14141b2bc79862d9c0f6, type: 3}
+  - {fileID: 3965474801925914047, guid: 17592f56de47cfc4fa2b541f783e4046, type: 3}

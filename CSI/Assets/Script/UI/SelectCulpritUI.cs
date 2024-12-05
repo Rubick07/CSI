@@ -98,6 +98,8 @@ public class SelectCulpritUI : NetworkBehaviour
     [ClientRpc]
     private void CasereviewClientRpc(bool oke)
     {
+        Debug.Log(oke);
+        Debug.Log(caseReview);
         caseReview.Jawaban(oke);
     }
 

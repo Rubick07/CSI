@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CulpritName: Hailey Parker
   CulpritPhoto: {fileID: 21300000, guid: 4a2c986140c57c8438ef8f313c619fa0, type: 3}
+  CulpritDesc: She is a blonde college student that has dreams of being a musician.
+    She is naturally calm and collected and is a bit of a shy person. Her iconic
+    features are the instruments she brought, sheet musics, and a headset. As a college
+    student, she usually keeps discount vouchers in her pocket and wallet. She wears
+    a necklace that shines bright like a gem in her neck. Her blood type is O
   Bukti:
   - {fileID: 5351712967058697458, guid: 49130d6787605024083dda68c789fbda, type: 3}
   - {fileID: 3972964321760724516, guid: 86ec07ef876bbbb4bbabde7c2cf1fe84, type: 3}

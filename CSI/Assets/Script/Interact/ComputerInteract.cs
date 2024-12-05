@@ -9,6 +9,7 @@ public class ComputerInteract : Interactable
     private PlayerInput LastPlayerInput;
     public override void Interact()
     {
+        AudioManager.Instance.PlaySFX("ComputerOn");
         LastPlayerInput = player.GetComponent<PlayerInput>();
         LastPlayerInput.ChangePlayerState(PlayerState.OpenComputer);
         ComputerUI.alpha = 1;

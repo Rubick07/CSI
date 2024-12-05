@@ -7,6 +7,8 @@ public class CulpritSO : ScriptableObject
 {
     public string CulpritName;
     public Sprite CulpritPhoto;
+    [TextArea]
+    public string CulpritDesc;
     //Bukti
     public GameObject[] Bukti;
 
