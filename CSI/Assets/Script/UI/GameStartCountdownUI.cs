@@ -46,6 +46,7 @@ public class GameStartCountdownUI : MonoBehaviour
 
         if (previousCountdownNumber != countdownNumber)
         {
+            AudioManager.Instance.PlaySFX("CaseStart");
             previousCountdownNumber = countdownNumber;
             animator.SetTrigger(NUMBER_POPUP);
             //SoundManager.Instance.PlayCountdownSound();

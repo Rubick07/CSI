@@ -58,6 +58,7 @@ public class TableInteract : Interactable
 
     public override void Interact()
     {
+        AudioManager.Instance.PlaySFX("BloodScanner");
         TablePickUpServerRpc();     
     }
 

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5887438198516925507}
   - component: {fileID: 8295667489367428502}
   - component: {fileID: 7262226157178573872}
+  - component: {fileID: -5103074236580102960}
   m_Layer: 6
   m_Name: PlayerForensik
   m_TagString: Untagged
@@ -274,6 +275,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 8295667489367428502}
+--- !u!81 &-5103074236580102960
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571847062416051142}
+  m_Enabled: 1
 --- !u!1 &8895385097982447448
 GameObject:
   m_ObjectHideFlags: 0

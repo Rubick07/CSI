@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
 using TMPro;
 
-public class SelectCulpritUI : MonoBehaviour
+public class SelectCulpritUI : NetworkBehaviour
 {
     [SerializeField] Button[] culpritsSelectButton;
     [SerializeField] TMP_Text[] culpritsNameText;
     [SerializeField] Button confirmButton;
     [SerializeField] private List<CulpritSO> culpritslist;
+    [SerializeField] private CaseReview caseReview;
     private int selectedculprits;
     private Animator animator;
     public static SelectCulpritUI instance;
@@ -51,12 +53,15 @@ public class SelectCulpritUI : MonoBehaviour
     {
         if (culpritslist[selectedculprits] == culpritsGenerator.GetCulprit())
         {
-            Debug.Log("Benar");
+            //Debug.Log("Benar");
+            CasereviewClientRpc(true);
         }
         else
         {
-            Debug.Log("Salah");
+            //Debug.Log("Salah");
+            CasereviewClientRpc(false);
         }
+        Hide();
     }
 
     public void ChangeSelectedculprit(int culpritIndex)
@@ -67,9 +72,11 @@ public class SelectCulpritUI : MonoBehaviour
 
     private void OnGameOver(object sender, System.EventArgs e)
     {
+        AudioManager.Instance.PlaySFX("CaseEnd");
         if (GameManager.Instance.IsGameOver() && PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Detektif)
         {
-            Debug.Log("adf");
+            
+            
             animator.SetTrigger("FadeIn");
         }
         else
@@ -86,6 +93,12 @@ public class SelectCulpritUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    [ClientRpc]
+    private void CasereviewClientRpc(bool oke)
+    {
+        caseReview.Jawaban(oke);
     }
 
 }

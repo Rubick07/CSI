@@ -12,7 +12,7 @@ public class PlayerInput : NetworkBehaviour
 {
     [Header("PlayerState")]
     public PlayerState state;
-    NetworkVariable <PlayerRole> Role = new NetworkVariable<PlayerRole>(PlayerRole.Neutral);
+    NetworkVariable <PlayerRole> Role = new NetworkVariable<PlayerRole>(PlayerRole.Detektif);
     [Header("PickUp SetUp")]
     [SerializeField] private GameObject PickUpObject;
     [SerializeField] private float speed;
@@ -135,8 +135,16 @@ public class PlayerInput : NetworkBehaviour
     {
         OpenJournal = !OpenJournal;
 
-        if (OpenJournal) Journal._instance.PlayAnimation("Drop");
-        else Journal._instance.PlayAnimation("Up");
+        if (OpenJournal)
+        {
+            Journal._instance.PlayAnimation("Drop");
+            
+        }
+        else
+        {
+            Journal._instance.PlayAnimation("Up");
+            AudioManager.Instance.PlaySFX("JournalClose");
+        }
     }
 
     public void ChangePlayerState(PlayerState NewplayerState)

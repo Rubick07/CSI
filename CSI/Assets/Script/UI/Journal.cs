@@ -232,6 +232,12 @@ public class Journal : NetworkBehaviour
         NextButton.gameObject.SetActive(oke);
         BackButton.gameObject.SetActive(oke);
     }
+
+    public int GetUnlockedEvidence()
+    {
+        return cluesUnlocked.Count;
+    }
+
 }
 
 

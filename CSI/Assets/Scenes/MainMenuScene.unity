@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -555, y: -208}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126200905
@@ -299,6 +299,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 591489207}
   - {fileID: 126200904}
   - {fileID: 2070014700}
   - {fileID: 1167648657}
@@ -975,6 +976,146 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &556303199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556303201}
+  - component: {fileID: 556303200}
+  m_Layer: 0
+  m_Name: VideoPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &556303200
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556303199}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 36fbd454741b85d47a9d30feaded3244, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 7be6047c5417ac343b96514a26a2eec0, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &556303201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556303199}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &591489206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591489207}
+  - component: {fileID: 591489209}
+  - component: {fileID: 591489208}
+  m_Layer: 5
+  m_Name: Screen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &591489207
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591489206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 136191510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &591489208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591489206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 7be6047c5417ac343b96514a26a2eec0, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &591489209
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591489206}
+  m_CullTransparentMesh: 1
 --- !u!1 &595626999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3436,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: efbb4f0fbfae5c64cb93fc2c60d95c15, type: 2}
   musicSound: []
-  sfxSound: []
+  sfxSound:
+  - Name: Back
+    clip: {fileID: 8300000, guid: 7195756e8f2092245a5cebf106ea2375, type: 3}
+  - Name: BloodScanner
+    clip: {fileID: 8300000, guid: 100922951b853db4bad4d8e985b028a9, type: 3}
+  - Name: CaseEnd
+    clip: {fileID: 8300000, guid: 5a271824248ca1c45837f381298fbf13, type: 3}
+  - Name: CaseStart
+    clip: {fileID: 8300000, guid: 80a94a0532800ac4a99d1568e6b8cada, type: 3}
+  - Name: ComputerOff
+    clip: {fileID: 8300000, guid: 5e891778270f2564eacd4588dee73f76, type: 3}
+  - Name: ComputerOn
+    clip: {fileID: 8300000, guid: 7c283f10b269b8246bea6517c4d3c3df, type: 3}
+  - Name: JournalClose
+    clip: {fileID: 8300000, guid: 5c230e7c52e62514fa1a31672e1bf159, type: 3}
+  - Name: LockOpen
+    clip: {fileID: 8300000, guid: e1bdec24e1a8d5642a31a1dca57cf348, type: 3}
+  - Name: ObjectPickUp
+    clip: {fileID: 8300000, guid: b7ae81edd25ae1b499e3dabf23b4d2d6, type: 3}
+  - Name: PageChange
+    clip: {fileID: 8300000, guid: d4cf0fa2245438f4699e055ffc0ac45e, type: 3}
+  - Name: Select
+    clip: {fileID: 8300000, guid: 3b0a472a8d980ff4d843763f2816b7f2, type: 3}
+  - Name: Typing
+    clip: {fileID: 8300000, guid: b5ea9b70215a48e49b7d92a9b07c4bf8, type: 3}
+  - Name: Walk
+    clip: {fileID: 8300000, guid: 033e38bac3c16fc4a8ad899b8c6ca7e6, type: 3}
   musicSource: {fileID: 1757854775}
   sfxSource: {fileID: 1958799761}
 --- !u!4 &1539168861
@@ -4550,3 +4717,4 @@ SceneRoots:
   - {fileID: 1036285171}
   - {fileID: 1539168861}
   - {fileID: 641046825}
+  - {fileID: 556303201}
