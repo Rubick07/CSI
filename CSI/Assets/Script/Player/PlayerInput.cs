@@ -56,10 +56,11 @@ public class PlayerInput : NetworkBehaviour
         }
         if (!GameManager.Instance.IsGamePlaying())
         {
+            movement = Vector2.zero;
             return;
         }
         PlayerInputSystem();
-
+        SetAnimation();
     }
 
     private void PlayerInputSystem()
@@ -110,6 +111,19 @@ public class PlayerInput : NetworkBehaviour
             barang.Interact();
         }
 
+    }
+
+    private void SetAnimation()
+    {
+        animator.SetFloat("Speed", MathF.Max(MathF.Abs(movement.x),MathF.Abs(movement.y)));
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("LastInputX", movement.x);
+            animator.SetFloat("LastInputY", movement.y);
+            
+        }
+        animator.SetFloat("InputX", movement.x);
+        animator.SetFloat("InputY", movement.y);
     }
 
     private void SetLocalPlayerReady()

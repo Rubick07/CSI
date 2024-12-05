@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c47e7f88604a0a488c41314ee2ae72d
+guid: 97c816bbbdb554f47ba6a3c6d4c97716
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,8 +71,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 1
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_annie_idle_back_0
+      name: spritesheet_charles_walk_back_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 6
         y: 0
-        width: 21
-        height: 47
+        width: 20
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4685aacf00616d04ea95278cffd77245
-      internalID: 1160679773
+      spriteID: df43006dfeec568458717149e8671ba1
+      internalID: 525614705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_annie_idle_back_1
+      name: spritesheet_charles_walk_back_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 38
         y: 0
-        width: 21
+        width: 19
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafba0f3c39f7fb488cb2bad61d31f42
-      internalID: -910163680
+      spriteID: 8ac281b9ddef8a7439540c6c22d8a4b5
+      internalID: 1521839992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_charles_walk_back_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 23
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b514a4f6787f45a4bb66a98e067e4c6b
+      internalID: 1671547335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_charles_walk_back_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c932a02b60f5448bb4bfc2352b89fb
+      internalID: 227606157
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_annie_idle_back_0: 1160679773
-      spritesheet_annie_idle_back_1: -910163680
+      spritesheet_charles_walk_back_0: 525614705
+      spritesheet_charles_walk_back_1: 1521839992
+      spritesheet_charles_walk_back_2: 1671547335
+      spritesheet_charles_walk_back_3: 227606157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
