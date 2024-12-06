@@ -14,7 +14,19 @@ public class CaseGenerator : NetworkBehaviour
     public Case JenisKasus;
     [SerializeField] TMP_Text Casetxt;
 
+    public static CaseGenerator instance;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private NetworkVariable<CaseData> randomCase = new NetworkVariable<CaseData>(new CaseData
     {
@@ -54,6 +66,21 @@ public class CaseGenerator : NetworkBehaviour
         randomCase.Value = new CaseData {KasusTerpilih = JenisKasus};
         Casetxt.text = JenisKasus.ToString();
         Debug.Log(randomCase.Value.KasusTerpilih);
+    }
+
+    public bool IsCase1()
+    {
+        return JenisKasus == Case.Case1;
+    }
+
+    public bool IsCase2()
+    {
+        return JenisKasus == Case.Case2;
+    }
+
+    public bool IsCase3()
+    {
+        return JenisKasus == Case.Case3;
     }
 
 }
