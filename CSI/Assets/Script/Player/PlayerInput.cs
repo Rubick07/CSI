@@ -196,13 +196,11 @@ public class PlayerInput : NetworkBehaviour
     public void SetPickUpObject(GameObject item)
     {
         PickUpObject = item;
-        PlayerInventoryUI.Instance.SetImage(item.GetComponent<SpriteRenderer>().sprite);
     }
 
     public void DeletePickUpObject()
     {
         PickUpObject = null;
-        PlayerInventoryUI.Instance.DeleteImage();
     }
 
 
