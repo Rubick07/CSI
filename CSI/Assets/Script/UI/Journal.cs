@@ -114,7 +114,24 @@ public class Journal : NetworkBehaviour
         }
         else
         {
-
+            if (CaseGenerator.instance.IsCase1())
+            {
+                Case.text = "Case: Planned Murder";
+                CaseStory.text = "On a rainy day, 19th of September 2024, a man was found dead in the middle of the street. People directly went to the body and called for help, but even before calling the ambulance the man was already lifeless with little to no resistance. Not a single person was found nearby and there are 5 main suspects to this case.";
+                AutopsyReportAtas.text = "The person is founded in a dead condition on 6:30 PM on Kerain Square. There are indications of some bruise marks on his forehead and some traces of a substance in his coat. There were no traces of fingerprints nor blood found on his body.";
+            }
+            else if (CaseGenerator.instance.IsCase2())
+            {
+                Case.text = "Case: Unplanned Murder";
+                CaseStory.text = "10th of May 2022, a corpse was found inside of a somewhat luxurious hotel. The body was found by the bellboy attempting to clean the room. Above the table was found traces of medicines with 2 diary books and a suicide note. The police force deemed it as a suicide case, but is it really the case? There are 5 main suspects on this case.";
+                AutopsyReportAtas.text = "The victim was found hanging on with a rope in his neck, but his body was found stabbed by a collection of decorative swords on the wall with marks of multiple small stabbings on some parts of the body, making the cause of death unclear.";
+            }
+            else if (CaseGenerator.instance.IsCase3())
+            {
+                Case.text = "Case: Theft";
+                CaseStory.text = "On the 7th of January 2023, on Kerain bank, a theft case happened in a bank where the culprit is still unidentified. It was supposed to be a regular saturday with people coming all over the bank. Suddenly, a bank teller screamed out and found out that some of their prized posession as well as bags of cash has disappeared from the bank. Lucky for the bank, and unlucky for the victim, the dynamic duo is here to crack the case.";
+                AutopsyReportAtas.text = "There are several missing items on the bank. The items include some electronics, bags of cash, and a red bag containing gold for the banks' grand prize in an event. Other than that, some jewelries are also missing from the employees' locker room. The crime was noticed around 12.00, approximately after the operational hour of the bank reaches break time.";
+            }
         }
 
     }
