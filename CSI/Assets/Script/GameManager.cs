@@ -132,13 +132,13 @@ public class GameManager : NetworkBehaviour
             {
                 Transform playerTransform = Instantiate(DetektifplayerPrefab);
                 playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
-                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
+                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(PlayerRole.Detektif);
             }
             else if(playerData.playerRole == PlayerRole.Forensik)
             {
                 Transform playerTransform = Instantiate(ForensikplayerPrefab);
                 playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
-                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(playerData.playerRole);
+                playerTransform.GetComponent<PlayerInput>().ChangePlayerRole(PlayerRole.Forensik);
             }
         }
     }

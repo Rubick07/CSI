@@ -10,10 +10,11 @@ public enum ClueProcessState
     done
 }
 
-public class TableInteract : Interactable
+public class BloodScannerInteract : Interactable
 {
     [SerializeField] private float _TimeToScan;
     [SerializeField] private Transform SpawnCluePosition;
+    [SerializeField] private Bar processBar;
     float _timeTemp;
     [SerializeField] Animator animatorPopUpProcess;
     [SerializeField] Animator animatorPopUpDone;
@@ -27,14 +28,26 @@ public class TableInteract : Interactable
         _timeTemp = _TimeToScan;
         animatorPopUpProcess = GameObject.FindGameObjectWithTag("Notice").GetComponent<Animator>();
         animatorPopUpDone = GetComponentInChildren<Animator>();
+        processBar.gameObject.SetActive(false);
+        processBar.ResetFill();
     }
     private void Update()
     {
         if (!IsServer) return;
         if (!_Bukti) state = ClueProcessState.idle;
-        if (state != ClueProcessState.process) return;
+        if (state != ClueProcessState.process)
+        {
+            return;
+        }
 
-        if(_TimeToScan > 0) _TimeToScan -= Time.deltaTime;
+
+        if (_TimeToScan > 0)
+        {
+            _TimeToScan -= Time.deltaTime;
+            float processTime = ((_timeTemp - _TimeToScan)/_timeTemp) * 100;
+            
+            processBar.SetFill(processTime);
+        }        
         else if(state == ClueProcessState.process)
         {
             ClueProcessDone();
@@ -44,8 +57,20 @@ public class TableInteract : Interactable
 
     }
 
+    new private void FixedUpdate()
+    {
+        if (state == ClueProcessState.process)
+            return;
+
+        base.FixedUpdate();
+    }
+
     private void ClueProcessDone()
     {
+        processBar.gameObject.SetActive(false);
+        processBar.ResetFill();
+        Text.SetActive(true);
+
         animatorPopUpDone.SetTrigger("Process");
         ClueProcessReadyPickUp = Instantiate(_BuktiObject, SpawnCluePosition);
         ClueProcessReadyPickUp.SetUpClue(_Bukti.GetComponent<PickUpInteract>().GetClue());
@@ -58,16 +83,19 @@ public class TableInteract : Interactable
 
     public override void Interact()
     {
+        _Bukti = player.GetComponent<PlayerInput>().GetPickUpObject();
+        if (_Bukti == null) return;
+
         AudioManager.Instance.PlaySFX("BloodScanner");
         TablePickUpServerRpc();     
     }
 
-    
+
     [ClientRpc]
     public void TablePickUpClientRpc()
     {
-        _Bukti = player.GetComponent<PlayerInput>().GetPickUpObject();
-        if (_Bukti == null) return;
+        processBar.gameObject.SetActive(true);
+        Text.SetActive(false);
         _TimeToScan = _timeTemp;
         state = ClueProcessState.process;
         //Debug.Log(animatorPopUpProcess.GetCurrentAnimatorStateInfo(0).IsName("Flickering"));

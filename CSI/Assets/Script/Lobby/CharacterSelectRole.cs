@@ -15,6 +15,7 @@ public class CharacterSelectRole : MonoBehaviour
     {
         selectRoleButton.onClick.AddListener(() => {
             CSIGameMultiplayer.Instance.ChangePlayerRole(playerRole);
+            Debug.Log("afd");
         });
     }
 

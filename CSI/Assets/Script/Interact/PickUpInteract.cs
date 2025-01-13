@@ -6,13 +6,14 @@ using Unity.Netcode;
 public class PickUpInteract : Interactable
 {
     [SerializeField] private Clue clue;
+    Page cluePage;
     public override void Interact()
     {
         
         if(player.GetComponent<PlayerInput>().GetPickUpObject() == null)
         {
             AudioManager.Instance.PlaySFX("ObjectPickUp");
-            PickUpServerRpc();
+            PickUpServer();
         }
 
         //PlayerInput.LocalInstance.SetPickUpObject(gameObject);
@@ -20,24 +21,39 @@ public class PickUpInteract : Interactable
         //Destroy(gameObject);
     }
     
+    /*
     [ClientRpc]
     public void PickUpClientRpc()
     {
-        player.GetComponent<PlayerInput>().SetPickUpObject(gameObject);
+
+        //player.GetComponent<PlayerInput>().SetPickUpObject(gameObject);
+        //PlayerInventoryUI.Instance.SetImage(gameObject.GetComponent<SpriteRenderer>().sprite);
         //PlayerInput.LocalInstance.SetPickUpObject(gameObject);
         gameObject.SetActive(false);
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void PickUpServerRpc()
+    */
+    public void PickUpServer()
     {
-        PickUpClientRpc();
+        //PickUpClientRpc();
+
+        Journal._instance.AddUnlockedClues(clue);
+
     }
 
     public Clue GetClue()
     {
         return clue;
     }
+
+    private void CluePageSetUp()
+    {
+        cluePage.ClueName = clued.Value.ClueName;
+        cluePage.description = clue.Value.description;
+        cluePage.img = ClueImages[clue.Value.IndexSprite];
+    }
+
 }
 
 [System.Serializable]

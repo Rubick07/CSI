@@ -32,10 +32,9 @@ public class PlayerInput : NetworkBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        
-        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos(Role.Value);
-        transform.position = new Vector2(oke.position.x, oke.position.y);
-        
+
+        Debug.Log(Role.Value);
+        Invoke("SetPlayerSpawn", 1f);
     }
 
     // Update is called once per frame
@@ -144,7 +143,7 @@ public class PlayerInput : NetworkBehaviour
         else
         {
             Journal._instance.PlayAnimation("Up");
-            AudioManager.Instance.PlaySFX("JournalClose");
+            //AudioManager.Instance.PlaySFX("JournalClose");
         }
     }
 
@@ -172,6 +171,16 @@ public class PlayerInput : NetworkBehaviour
         }
     }
 
+    public void SetPlayerSpawn()
+    {
+        Transform oke = FindAnyObjectByType<SpawnPlayerPos>().GetComponent<SpawnPlayerPos>().GetPos(Role.Value);
+        transform.position = new Vector2(oke.position.x, oke.position.y);
+    }
+
+    public void SetPlayerJournal(bool oke)
+    {
+        OpenJournal = oke;
+    }
 
 
     #region PickUpObject
@@ -196,13 +205,13 @@ public class PlayerInput : NetworkBehaviour
     public void SetPickUpObject(GameObject item)
     {
         PickUpObject = item;
-        PlayerInventoryUI.Instance.SetImage(item.GetComponent<SpriteRenderer>().sprite);
+        //PlayerInventoryUI.Instance.SetImage(item.GetComponent<SpriteRenderer>().sprite);
     }
 
     public void DeletePickUpObject()
     {
         PickUpObject = null;
-        PlayerInventoryUI.Instance.DeleteImage();
+        //PlayerInventoryUI.Instance.DeleteImage();
     }
 
 

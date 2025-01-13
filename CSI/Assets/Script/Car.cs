@@ -13,16 +13,18 @@ public enum CarState
 public class Car : NetworkBehaviour
 {
     [SerializeField] Transform TempatClueNyampe;
+    [SerializeField] private Bar processBar;
     public CarState carState;
     [SerializeField] float TimetoDeliver;
     private GameObject ClueToDeliver;
     private float TimetoDeliverTemp;
     private float TimetoReturn;
-
+    CarInteract carInteract;
     private void Start()
     {
         TimetoDeliverTemp = TimetoDeliver;
         TimetoReturn = TimetoDeliverTemp;
+        carInteract = FindAnyObjectByType<CarInteract>();
     }
 
     private void Update()
@@ -34,11 +36,12 @@ public class Car : NetworkBehaviour
             if(TimetoDeliver > 0)
             {
                 TimetoDeliver -= Time.deltaTime;
-
+                float TimeLeft = ((TimetoDeliverTemp - TimetoDeliver) / (TimetoDeliverTemp )) * 100;
+                processBar.SetFill(TimeLeft);
             }
             else
             {
-                ClueArrive();
+                ClueArriveServerRpc();
             }
 
         }
@@ -48,10 +51,12 @@ public class Car : NetworkBehaviour
             if(TimetoReturn > 0)
             {
                 TimetoReturn -= Time.deltaTime;
+                float TimeLeft = ((TimetoDeliverTemp - TimetoReturn ) / (TimetoDeliverTemp )) * 100;
+                processBar.SetFill(TimeLeft);
             }
             else
             {
-                CarReturn();
+                CarReturnServerRpc();
             }
         }
 
@@ -60,32 +65,43 @@ public class Car : NetworkBehaviour
     public void DeliverClue(GameObject Clue)
     {
         if (carState != CarState.Ready) return;
+
+        processBar.gameObject.SetActive(true);
         ClueToDeliver = Clue;
         carState = CarState.Deliver;
         TimetoDeliver = TimetoDeliverTemp;
     }
 
-    public void ClueArrive()
+    [ClientRpc]
+    public void ClueArriveClientRpc()
     {
-        ClueToDeliver.transform.position = TempatClueNyampe.position;
-        //GameObject oke = Instantiate(ClueToDeliver, TempatClueNyampe);
-        //oke.GetComponent<NetworkObject>().Spawn(true);
-        //oke.transform.SetParent(TempatClueNyampe);
-        //oke.transform.localPosition = new Vector3(0, 0, 0);        
+        ClueToDeliver.transform.position = TempatClueNyampe.position;  
         ClueToDeliver.SetActive(true);
-
-        //ClueToDeliver.GetComponent<NetworkObject>().Despawn(true);
-        //Destroy(ClueToDeliver);
-
 
         ClueToDeliver = null;
         carState = CarState.Return;
         TimetoReturn = TimetoDeliverTemp;
     }
 
-    public void CarReturn()
+    [ServerRpc(RequireOwnership = false)]
+    public void ClueArriveServerRpc()
+    {
+        ClueArriveClientRpc();
+    }
+
+    [ClientRpc]
+    public void CarReturnClientRpc()
     {
         carState = CarState.Ready;
+        carInteract.Text.SetActive(true);
+        processBar.gameObject.SetActive(false);
+        carInteract.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+    }
+
+    [ServerRpc]
+    public void CarReturnServerRpc()
+    {
+        CarReturnClientRpc();
     }
 
 

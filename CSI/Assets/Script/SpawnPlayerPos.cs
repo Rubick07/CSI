@@ -8,14 +8,17 @@ public class SpawnPlayerPos : MonoBehaviour
     
     public Transform GetPos(PlayerRole playerRole)
     {
+        Debug.Log(playerRole);
         if(playerRole == PlayerRole.Detektif)
         {
             return SpawnPos[0];
         }
-        else 
+        else if(playerRole == PlayerRole.Forensik)
         {
             return SpawnPos[1];
         }
+
+        return null;
     }
 
 }

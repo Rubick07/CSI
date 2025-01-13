@@ -19,6 +19,7 @@ public class Page
     public Sprite img;
     [TextArea]
     public string description;
+    public bool isUnlocked;
 }
 
 public class Journal : NetworkBehaviour
@@ -210,6 +211,11 @@ public class Journal : NetworkBehaviour
     public void PlayAnimation(string TriggerName)
     {
         JournalAnimation.SetTrigger(TriggerName);
+        if(TriggerName == "Up")
+        {
+            AudioManager.Instance.PlaySFX("JournalClose");
+            PlayerInput.LocalInstance.SetPlayerJournal(false);
+        }
     }
 
     public void AddCulprits(CulpritSO culpritSO)

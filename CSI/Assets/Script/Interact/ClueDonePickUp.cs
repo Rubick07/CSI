@@ -62,8 +62,6 @@ public class ClueDonePickUp : Interactable
     public void SetUpClue(Clue newclue)
     {
         clue = newclue;
-
-
     }
 
     public override void OnNetworkSpawn()

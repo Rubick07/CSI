@@ -75,8 +75,7 @@ public class SelectCulpritUI : NetworkBehaviour
         AudioManager.Instance.PlaySFX("CaseEnd");
         if (GameManager.Instance.IsGameOver() && PlayerInput.LocalInstance.GetPlayerRole() == PlayerRole.Detektif)
         {
-            
-            
+                        
             animator.SetTrigger("FadeIn");
         }
         else

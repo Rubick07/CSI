@@ -11,7 +11,7 @@ public class Interactable : NetworkBehaviour
     public Collider2D player;
 
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if(PlayerInput.LocalInstance == null)
         {
@@ -27,8 +27,7 @@ public class Interactable : NetworkBehaviour
             {
                 Text.SetActive(true);
 
-            }
-            
+            }            
         }
         else
         {
